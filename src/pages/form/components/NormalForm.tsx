@@ -98,6 +98,10 @@ function NormalForm() {
           />
 
           <Button type="submit">Submit</Button>
+
+          <Button onClick={() => form.reset()} variant="secondary">
+            Reset
+          </Button>
         </form>
       </Form>
     </div>
