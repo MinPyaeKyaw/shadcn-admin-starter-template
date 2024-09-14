@@ -17,7 +17,7 @@ export function DashboardLayout() {
 
         <main
           className={clsx(
-            "p-4 sm:mx-4 flex-1 items-start mt-10",
+            "p-4 sm:mx-4 flex-1 items-start mt-14",
             APP_TRANSITION,
             APP_GRID,
             sidebarCollapsed ? "sm:pl-[60px]" : "sm:pl-[250px]"
