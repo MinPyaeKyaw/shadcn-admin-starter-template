@@ -18,7 +18,7 @@ export function Sidebar() {
     >
       <div
         onClick={toggleSidebar}
-        className="absolute right-[-11px] h-[22px] w-[22px] cursor-pointer bg-primary flex items-center justify-center rounded-full text-white"
+        className="absolute right-[-11px] h-[22px] w-[22px] cursor-pointer bg-primary flex items-center justify-center rounded-full text-primary-foreground"
       >
         {sidebarCollapsed ? (
           <ChevronRight className="h-[18px] w-[18px]" />

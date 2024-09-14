@@ -131,7 +131,8 @@ function SidebarItem({ icon, name, route, childs, collapsible = true }: Props) {
         onClick={handleClick}
         className={clsx(
           "w-full h-9 flex items-center justify-between px-2 rounded-lg cursor-pointer transition-all duration-300 text-muted-foreground",
-          (isMatched || hasActiveChild()) && "bg-primary text-white",
+          (isMatched || hasActiveChild()) &&
+            "bg-primary text-primary-foreground",
           !(isMatched || hasActiveChild()) && "hover:bg-primary/10"
         )}
       >

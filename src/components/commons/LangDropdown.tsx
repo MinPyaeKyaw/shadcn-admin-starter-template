@@ -36,7 +36,7 @@ function LangDropdown() {
           className={clsx(
             "cursor-pointer",
             i18n.language === "en" &&
-              "bg-primary text-white focus:text-white focus:bg-primary"
+              "bg-primary text-primary-foreground focus:text-primary-foreground focus:bg-primary"
           )}
         >
           English
@@ -46,7 +46,7 @@ function LangDropdown() {
           className={clsx(
             "cursor-pointer",
             i18n.language === "mm" &&
-              "bg-primary text-white focus:text-white focus:bg-primary"
+              "bg-primary text-primary-foreground focus:text-primary-foreground focus:bg-primary"
           )}
         >
           Myanmar
