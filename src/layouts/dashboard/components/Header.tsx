@@ -22,6 +22,7 @@ import useUserPreference from "@stores/userPreference";
 import clsx from "clsx";
 import { APP_TRANSITION } from "@configs/ui";
 import { useTheme } from "@components/theme/ThemeProvider";
+import LangDropdown from "@components/commons/LangDropdown";
 
 export function Header() {
   const { sidebarCollapsed } = useUserPreference();
@@ -76,6 +77,8 @@ export function Header() {
       {/* ======== App Bar ======== */}
       <div className="flex-1 flex gap-4 items-center justify-between">
         <SearchInput />
+
+        <LangDropdown />
 
         <Button
           onClick={handleToggleTheme}
