@@ -21,7 +21,7 @@ type FormType = {
   checkboxInput: boolean;
 };
 
-function NormalForm() {
+function FormWithReusableInputs() {
   const form = useForm<FormType>({
     resolver: zodResolver(normalFormSchema),
     defaultValues: {
@@ -108,4 +108,4 @@ function NormalForm() {
   );
 }
 
-export default NormalForm;
+export default FormWithReusableInputs;
