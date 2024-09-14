@@ -6,6 +6,10 @@ const requiredString = (message: string) => {
   });
 };
 
+// const requiredNumber = (message: string) => {
+//   return z.number().gte(1, { message });
+// };
+
 const requiredCheckGroup = (message: string) => {
   return z.array(z.string()).refine((value) => value.some((item) => item), {
     message,
@@ -26,4 +30,5 @@ export const normalFormSchema = z.object({
   checkgroupInput: requiredCheckGroup("This field is required!"),
   checkboxInput: requiredTrueValue("Need to be checked"),
   passwordInput: requiredString("This field is required!"),
+  dateInput: requiredString("This field is required!"),
 });

@@ -1,5 +1,6 @@
 import CheckboxInput from "@components/inputs/CheckboxInput";
 import CheckGroupInput from "@components/inputs/CheckGroupInput";
+import DateInput from "@components/inputs/DateInput";
 import PasswordInput from "@components/inputs/PasswordInput";
 import RadioInput from "@components/inputs/RadioInput";
 import SelectInput from "@components/inputs/SelectInput";
@@ -9,9 +10,16 @@ import { Form } from "@components/ui/form";
 import { normalFormSchema } from "@helpers/form-schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 
-type FormType = z.infer<typeof normalFormSchema>;
+type FormType = {
+  textInput: string;
+  textInputWithDesc: string;
+  selectInput: string;
+  checkgroupInput: string[];
+  passwordInput: string;
+  dateInput: string;
+  checkboxInput: boolean;
+};
 
 function NormalForm() {
   const form = useForm<FormType>({
@@ -21,6 +29,9 @@ function NormalForm() {
       textInputWithDesc: "",
       selectInput: "",
       checkgroupInput: [],
+      passwordInput: "",
+      dateInput: "",
+      checkboxInput: false,
     },
   });
 
@@ -62,6 +73,13 @@ function NormalForm() {
           <CheckGroupInput
             label="Choose Some"
             name="checkgroupInput"
+            form={form}
+          />
+
+          <DateInput
+            label="Choose Date"
+            placeholder="Date input"
+            name="dateInput"
             form={form}
           />
 
