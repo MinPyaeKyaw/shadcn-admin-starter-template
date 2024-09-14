@@ -1,5 +1,6 @@
 import CheckboxInput from "@components/inputs/CheckboxInput";
 import CheckGroupInput from "@components/inputs/CheckGroupInput";
+import PasswordInput from "@components/inputs/PasswordInput";
 import RadioInput from "@components/inputs/RadioInput";
 import SelectInput from "@components/inputs/SelectInput";
 import TextInput from "@components/inputs/TextInput";
@@ -64,10 +65,17 @@ function NormalForm() {
             form={form}
           />
 
+          <PasswordInput
+            label="Enter Password"
+            placeholder="Password input"
+            name="passwordInput"
+            form={form}
+          />
+
           <CheckboxInput
-            label="Choose Some"
+            label="Terms & conditions"
             name="checkboxInput"
-            description="This is text input with description"
+            description="This is checkbox with description"
             form={form}
           />
 

@@ -25,4 +25,5 @@ export const normalFormSchema = z.object({
   radioInput: requiredString("This field is required!"),
   checkgroupInput: requiredCheckGroup("This field is required!"),
   checkboxInput: requiredTrueValue("Need to be checked"),
+  passwordInput: requiredString("This field is required!"),
 });

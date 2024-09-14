@@ -51,7 +51,7 @@ function CheckGroupInput({ label, description, name, form }: Props) {
       render={() => (
         <FormItem>
           <div className="mb-4">
-            <FormLabel className="text-base">{label}</FormLabel>
+            <FormLabel>{label}</FormLabel>
             {description && <FormDescription>{description}</FormDescription>}
           </div>
           {items.map((item) => (
