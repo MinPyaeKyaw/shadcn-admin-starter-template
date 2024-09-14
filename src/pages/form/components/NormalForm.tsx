@@ -1,3 +1,6 @@
+import CheckboxInput from "@components/inputs/CheckboxInput";
+import CheckGroupInput from "@components/inputs/CheckGroupInput";
+import RadioInput from "@components/inputs/RadioInput";
 import SelectInput from "@components/inputs/SelectInput";
 import TextInput from "@components/inputs/TextInput";
 import { Button } from "@components/ui/button";
@@ -16,6 +19,7 @@ function NormalForm() {
       textInput: "",
       textInputWithDesc: "",
       selectInput: "",
+      checkgroupInput: [],
     },
   });
 
@@ -49,6 +53,21 @@ function NormalForm() {
             label="Choose One"
             placeholder="Select input"
             name="selectInput"
+            form={form}
+          />
+
+          <RadioInput label="Choose One" name="radioInput" form={form} />
+
+          <CheckGroupInput
+            label="Choose Some"
+            name="checkgroupInput"
+            form={form}
+          />
+
+          <CheckboxInput
+            label="Choose Some"
+            name="checkboxInput"
+            description="This is text input with description"
             form={form}
           />
 
