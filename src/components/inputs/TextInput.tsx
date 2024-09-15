@@ -12,19 +12,30 @@ interface Props {
   label?: string;
   placeholder?: string;
   description?: string;
+  withAsterisk?: boolean;
   name: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
 }
 
-function TextInput({ label, placeholder, description, name, form }: Props) {
+function TextInput({
+  label,
+  placeholder,
+  description,
+  withAsterisk = false,
+  name,
+  form,
+}: Props) {
   return (
     <FormField
       control={form.control}
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel className="flex items-center gap-1">
+            {label}{" "}
+            {withAsterisk && <span className="mt-1 text-destructive">*</span>}
+          </FormLabel>
           <FormControl>
             <Input placeholder={placeholder} {...field} />
           </FormControl>

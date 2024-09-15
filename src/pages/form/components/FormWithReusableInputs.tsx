@@ -50,6 +50,7 @@ function FormWithReusableInputs() {
             label="Enter Something"
             placeholder="Text input"
             name="textInput"
+            withAsterisk
             form={form}
           />
 
@@ -65,14 +66,21 @@ function FormWithReusableInputs() {
             label="Choose One"
             placeholder="Select input"
             name="selectInput"
+            withAsterisk
             form={form}
           />
 
-          <RadioInput label="Choose One" name="radioInput" form={form} />
+          <RadioInput
+            label="Choose One"
+            name="radioInput"
+            withAsterisk
+            form={form}
+          />
 
           <CheckGroupInput
             label="Choose Some"
             name="checkgroupInput"
+            withAsterisk
             form={form}
           />
 
@@ -80,6 +88,7 @@ function FormWithReusableInputs() {
             label="Choose Date"
             placeholder="Date input"
             name="dateInput"
+            withAsterisk
             form={form}
           />
 
@@ -87,6 +96,7 @@ function FormWithReusableInputs() {
             label="Enter Password"
             placeholder="Password input"
             name="passwordInput"
+            withAsterisk
             form={form}
           />
 

@@ -19,18 +19,29 @@ interface Props {
   placeholder?: string;
   description?: string;
   name: string;
+  withAsterisk?: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
 }
 
-function DateInput({ label, placeholder, description, name, form }: Props) {
+function DateInput({
+  label,
+  placeholder,
+  description,
+  withAsterisk = false,
+  name,
+  form,
+}: Props) {
   return (
     <FormField
       control={form.control}
       name={name}
       render={({ field }) => (
         <FormItem className="flex flex-col">
-          <FormLabel>{label}</FormLabel>
+          <FormLabel className="flex items-center gap-1">
+            {label}{" "}
+            {withAsterisk && <span className="mt-1 text-destructive">*</span>}
+          </FormLabel>
           <Popover>
             <PopoverTrigger asChild>
               <FormControl>

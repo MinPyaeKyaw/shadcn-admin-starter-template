@@ -18,19 +18,30 @@ interface Props {
   label?: string;
   placeholder?: string;
   description?: string;
+  withAsterisk?: boolean;
   name: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
 }
 
-function SelectInput({ label, placeholder, description, name, form }: Props) {
+function SelectInput({
+  label,
+  placeholder,
+  withAsterisk = false,
+  description,
+  name,
+  form,
+}: Props) {
   return (
     <FormField
       control={form.control}
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel className="flex items-center gap-1">
+            {label}{" "}
+            {withAsterisk && <span className="mt-1 text-destructive">*</span>}
+          </FormLabel>
           <Select onValueChange={field.onChange} defaultValue={field.value}>
             <FormControl>
               <SelectTrigger>

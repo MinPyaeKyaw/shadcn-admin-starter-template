@@ -14,12 +14,20 @@ interface Props {
   label?: string;
   placeholder?: string;
   description?: string;
+  withAsterisk?: boolean;
   name: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
 }
 
-function PasswordInput({ label, placeholder, description, name, form }: Props) {
+function PasswordInput({
+  label,
+  placeholder,
+  description,
+  withAsterisk = false,
+  name,
+  form,
+}: Props) {
   const [visiblePassword, setVisiblePassword] = useState<boolean>(false);
 
   const togglePasswordVisibility = () => {
@@ -31,7 +39,10 @@ function PasswordInput({ label, placeholder, description, name, form }: Props) {
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel className="flex items-center gap-1">
+            {label}{" "}
+            {withAsterisk && <span className="mt-1 text-destructive">*</span>}
+          </FormLabel>
           <FormControl>
             <div className="relative flex items-center justify-between">
               <div

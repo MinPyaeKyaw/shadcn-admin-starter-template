@@ -10,18 +10,22 @@ import { RadioGroup, RadioGroupItem } from "@components/ui/radio-group";
 interface Props {
   label?: string;
   name: string;
+  withAsterisk?: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
 }
 
-function RadioInput({ label, name, form }: Props) {
+function RadioInput({ label, name, withAsterisk = false, form }: Props) {
   return (
     <FormField
       control={form.control}
       name={name}
       render={({ field }) => (
         <FormItem className="space-y-3">
-          <FormLabel>{label}</FormLabel>
+          <FormLabel className="flex items-center gap-1">
+            {label}{" "}
+            {withAsterisk && <span className="mt-1 text-destructive">*</span>}
+          </FormLabel>
           <FormControl>
             <RadioGroup
               onValueChange={field.onChange}

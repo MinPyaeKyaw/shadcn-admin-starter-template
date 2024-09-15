@@ -11,6 +11,7 @@ import {
 interface Props {
   label?: string;
   description?: string;
+  withAsterisk?: boolean;
   name: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
@@ -43,7 +44,13 @@ const items = [
   },
 ] as const;
 
-function CheckGroupInput({ label, description, name, form }: Props) {
+function CheckGroupInput({
+  label,
+  description,
+  name,
+  withAsterisk = false,
+  form,
+}: Props) {
   return (
     <FormField
       control={form.control}
@@ -51,7 +58,10 @@ function CheckGroupInput({ label, description, name, form }: Props) {
       render={() => (
         <FormItem>
           <div className="mb-4">
-            <FormLabel>{label}</FormLabel>
+            <FormLabel className="flex items-center gap-1">
+              {label}{" "}
+              {withAsterisk && <span className="mt-1 text-destructive">*</span>}
+            </FormLabel>
             {description && <FormDescription>{description}</FormDescription>}
           </div>
           {items.map((item) => (
