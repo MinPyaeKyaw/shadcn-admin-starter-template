@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { ModalProvider } from "@saimin/react-modal-manager";
 
 type Theme = "dark" | "light" | "system";
 
@@ -58,7 +59,7 @@ export function ThemeProvider({
 
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
-      {children}
+      <ModalProvider>{children}</ModalProvider>
     </ThemeProviderContext.Provider>
   );
 }
