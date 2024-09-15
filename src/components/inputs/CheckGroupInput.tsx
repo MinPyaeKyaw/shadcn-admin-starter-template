@@ -12,42 +12,17 @@ interface Props {
   label?: string;
   description?: string;
   withAsterisk?: boolean;
+  data: DataType[];
   name: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
 }
 
-const items = [
-  {
-    id: "recents",
-    label: "Recents",
-  },
-  {
-    id: "home",
-    label: "Home",
-  },
-  {
-    id: "applications",
-    label: "Applications",
-  },
-  {
-    id: "desktop",
-    label: "Desktop",
-  },
-  {
-    id: "downloads",
-    label: "Downloads",
-  },
-  {
-    id: "documents",
-    label: "Documents",
-  },
-] as const;
-
 function CheckGroupInput({
   label,
   description,
   name,
+  data,
   withAsterisk = false,
   form,
 }: Props) {
@@ -64,32 +39,32 @@ function CheckGroupInput({
             </FormLabel>
             {description && <FormDescription>{description}</FormDescription>}
           </div>
-          {items.map((item) => (
+          {data.map((d) => (
             <FormField
-              key={item.id}
+              key={d.value as string}
               control={form.control}
               name={name}
               render={({ field }) => {
                 return (
                   <FormItem
-                    key={item.id}
+                    key={d.value as string}
                     className="flex flex-row items-start space-x-3 space-y-0"
                   >
                     <FormControl>
                       <Checkbox
-                        checked={field.value?.includes(item.id)}
+                        checked={field.value?.includes(d.value as string)}
                         onCheckedChange={(checked) => {
                           return checked
-                            ? field.onChange([...(field.value || []), item.id])
+                            ? field.onChange([...(field.value || []), d.value])
                             : field.onChange(
                                 field.value?.filter(
-                                  (value: string) => value !== item.id
+                                  (value: string) => value !== d.value
                                 )
                               );
                         }}
                       />
                     </FormControl>
-                    <FormLabel className="font-normal">{item.label}</FormLabel>
+                    <FormLabel className="font-normal">{d.label}</FormLabel>
                   </FormItem>
                 );
               }}

@@ -21,6 +21,24 @@ type FormType = {
   checkboxInput: boolean;
 };
 
+const radioData = [
+  { value: "radio one", label: "Radio One" },
+  { value: "radio two", label: "Radio Two" },
+  { value: "radio three", label: "Radio Three" },
+];
+
+const selectData = [
+  { value: "select one", label: "Select One" },
+  { value: "select two", label: "Select Two" },
+  { value: "select three", label: "Select Three" },
+];
+
+const checkgpData = [
+  { value: "check group one", label: "Check Group One" },
+  { value: "check group two", label: "Check Group Two" },
+  { value: "check group three", label: "Check Group Three" },
+];
+
 function FormWithReusableInputs() {
   const form = useForm<FormType>({
     resolver: zodResolver(normalFormSchema),
@@ -66,6 +84,7 @@ function FormWithReusableInputs() {
             label="Choose One"
             placeholder="Select input"
             name="selectInput"
+            data={selectData}
             withAsterisk
             form={form}
           />
@@ -73,6 +92,7 @@ function FormWithReusableInputs() {
           <RadioInput
             label="Choose One"
             name="radioInput"
+            data={radioData}
             withAsterisk
             form={form}
           />
@@ -80,6 +100,7 @@ function FormWithReusableInputs() {
           <CheckGroupInput
             label="Choose Some"
             name="checkgroupInput"
+            data={checkgpData}
             withAsterisk
             form={form}
           />

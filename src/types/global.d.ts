@@ -1,9 +1,9 @@
-// global.d.ts
 declare global {
   type Lang = "en" | "mm";
 
   type Theme = "dark" | "light";
+
+  type DataType = { value: string | Record<string, unknown>; label: string };
 }
 
-// This is necessary to make the file a module
 export {};

@@ -18,6 +18,7 @@ interface Props {
   label?: string;
   placeholder?: string;
   description?: string;
+  data: DataType[];
   withAsterisk?: boolean;
   name: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -29,6 +30,7 @@ function SelectInput({
   placeholder,
   withAsterisk = false,
   description,
+  data,
   name,
   form,
 }: Props) {
@@ -49,9 +51,11 @@ function SelectInput({
               </SelectTrigger>
             </FormControl>
             <SelectContent>
-              <SelectItem value="m@example.com">m@example.com</SelectItem>
-              <SelectItem value="m@google.com">m@google.com</SelectItem>
-              <SelectItem value="m@support.com">m@support.com</SelectItem>
+              {data.map((d) => (
+                <SelectItem key={d.value as string} value={d.value as string}>
+                  {d.label}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
           {description && <FormDescription>{description}</FormDescription>}
