@@ -58,81 +58,87 @@ function FormWithReusableInputs() {
   }
 
   return (
-    <div className="border rounded-lg p-4 w-full sm:w-full md:w-[50%]">
+    <div className="border rounded-lg p-4 w-full">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex flex-col gap-4"
+          className="grid gap-4 grid-cols-1 sm:grid-cols-2"
         >
-          <TextInput
-            label="Enter Something"
-            placeholder="Text input"
-            name="textInput"
-            withAsterisk
-            form={form}
-          />
+          <div className="space-y-4">
+            <TextInput
+              label="Enter Something"
+              placeholder="Text input"
+              name="textInput"
+              withAsterisk
+              form={form}
+            />
 
-          <TextInput
-            label="Enter Something"
-            placeholder="Text input"
-            description="This is text input with description"
-            name="textInputWithDesc"
-            form={form}
-          />
+            <SelectInput
+              label="Choose One"
+              placeholder="Select input"
+              name="selectInput"
+              data={selectData}
+              withAsterisk
+              form={form}
+            />
 
-          <SelectInput
-            label="Choose One"
-            placeholder="Select input"
-            name="selectInput"
-            data={selectData}
-            withAsterisk
-            form={form}
-          />
+            <DateInput
+              label="Choose Date"
+              placeholder="Date input"
+              name="dateInput"
+              withAsterisk
+              form={form}
+            />
 
-          <RadioInput
-            label="Choose One"
-            name="radioInput"
-            data={radioData}
-            withAsterisk
-            form={form}
-          />
+            <PasswordInput
+              label="Enter Password"
+              placeholder="Password input"
+              name="passwordInput"
+              withAsterisk
+              form={form}
+            />
+          </div>
 
-          <CheckGroupInput
-            label="Choose Some"
-            name="checkgroupInput"
-            data={checkgpData}
-            withAsterisk
-            form={form}
-          />
+          <div className="space-y-4">
+            <TextInput
+              label="Enter Something"
+              placeholder="Text input"
+              description="This is text input with description"
+              name="textInputWithDesc"
+              form={form}
+            />
 
-          <DateInput
-            label="Choose Date"
-            placeholder="Date input"
-            name="dateInput"
-            withAsterisk
-            form={form}
-          />
+            <RadioInput
+              label="Choose One"
+              name="radioInput"
+              data={radioData}
+              withAsterisk
+              form={form}
+            />
 
-          <PasswordInput
-            label="Enter Password"
-            placeholder="Password input"
-            name="passwordInput"
-            withAsterisk
-            form={form}
-          />
+            <CheckGroupInput
+              label="Choose Some"
+              name="checkgroupInput"
+              data={checkgpData}
+              withAsterisk
+              form={form}
+            />
 
-          <CheckboxInput
-            label="Terms & conditions"
-            name="checkboxInput"
-            description="This is checkbox with description"
-            form={form}
-          />
+            <CheckboxInput
+              label="Terms & conditions"
+              name="checkboxInput"
+              description="This is checkbox with description"
+              form={form}
+            />
+          </div>
 
-          <Button type="submit">Submit</Button>
+          <div className="space-x-4">
+            <Button type="submit">Submit</Button>
 
-          <Button onClick={() => form.reset()} variant="secondary">
-            Reset
-          </Button>
+            <Button onClick={() => form.reset()} variant="secondary">
+              Reset
+            </Button>
+          </div>
         </form>
       </Form>
     </div>

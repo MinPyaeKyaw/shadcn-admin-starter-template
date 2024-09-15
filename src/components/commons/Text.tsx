@@ -1,4 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
+import clsx from "clsx";
 
 const textStyles = cva("font-sans", {
   variants: {
@@ -29,11 +30,20 @@ const textStyles = cva("font-sans", {
 
 type TextProps = VariantProps<typeof textStyles> & {
   children: React.ReactNode;
+  className?: string;
 };
 
-const Text: React.FC<TextProps> = ({ size, weight, color, children }) => {
+const Text: React.FC<TextProps> = ({
+  size,
+  weight,
+  color,
+  className,
+  children,
+}) => {
   return (
-    <span className={textStyles({ size, weight, color })}>{children}</span>
+    <p className={clsx(textStyles({ size, weight, color }), className)}>
+      {children}
+    </p>
   );
 };
 
