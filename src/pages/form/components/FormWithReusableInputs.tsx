@@ -58,7 +58,7 @@ function FormWithReusableInputs() {
   }
 
   return (
-    <div className="border rounded-lg p-4">
+    <div className="border rounded-lg p-4 w-full sm:w-full md:w-[50%]">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
