@@ -1,51 +1,39 @@
-import DemoModal from "@components/modals/DemoModal";
-import { Button } from "@components/ui/button";
-import { ToastAction } from "@components/ui/toast";
-import { useToast } from "@hooks/use-toast";
+// import { ToastAction } from "@components/ui/toast";
+// import { useToast } from "@hooks/use-toast";
 import { useModal } from "@saimin/react-modal-manager";
+import ModalCard from "./components/ModalCard";
+import PageTtile from "./components/PageTitle";
+import modals from "./mock-data/modals";
+import DemoModal from "@components/modals/DemoModal";
 
 export function Modals() {
   const { open } = useModal();
-  const { toast } = useToast();
+  // const { toast } = useToast();
 
-  const openMyModal = () => {
-    open("my-modal", {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleOpenModal = (id: string, modalProps: any): void => {
+    open(id, {
       content: <DemoModal />,
-      backdropOpacity: 0.5,
-      fullscreen: false,
-      position: "center",
-      animationType: "zoom",
+      ...modalProps,
     });
   };
 
   return (
-    <div className="grid grid-cols-4 gap-4">
-      <Button onClick={openMyModal}>Open Modal</Button>
+    <div>
+      <PageTtile />
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {modals.map((m) => (
+          <ModalCard key={m.id} modal={m} open={handleOpenModal} />
+        ))}
+      </div>
 
-      <Button onClick={openMyModal}>Open Modal</Button>
-
-      <Button onClick={openMyModal}>Open Modal</Button>
-
-      <Button onClick={openMyModal}>Open Modal</Button>
-
-      <Button
-        onClick={() => {
-          toast({
-            title: "Scheduled: Catch up",
-            description: "Friday, February 10, 2023 at 5:57 PM",
-            action: (
-              <ToastAction
-                onClick={() => console.log("action")}
-                altText="Try again"
-              >
-                Try again
-              </ToastAction>
-            ),
-          });
-        }}
-      >
-        Show Toast
-      </Button>
+      {/* <PageTtile />
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <ModalCard />
+        <ModalCard />
+        <ModalCard />
+        <ModalCard />
+      </div> */}
     </div>
   );
 }

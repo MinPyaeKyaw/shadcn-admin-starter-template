@@ -7,9 +7,10 @@ import SelectInput from "@components/inputs/SelectInput";
 import TextInput from "@components/inputs/TextInput";
 import { Button } from "@components/ui/button";
 import { Form } from "@components/ui/form";
-import { normalFormSchema } from "@helpers/form-schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { normalFormSchema } from "../schemas/normalFormSchema";
+import { checkgpData, radioData, selectData } from "../mock-data/mock-data";
 
 type FormType = {
   textInput: string;
@@ -20,24 +21,6 @@ type FormType = {
   dateInput: string;
   checkboxInput: boolean;
 };
-
-const radioData = [
-  { value: "radio one", label: "Radio One" },
-  { value: "radio two", label: "Radio Two" },
-  { value: "radio three", label: "Radio Three" },
-];
-
-const selectData = [
-  { value: "select one", label: "Select One" },
-  { value: "select two", label: "Select Two" },
-  { value: "select three", label: "Select Three" },
-];
-
-const checkgpData = [
-  { value: "check group one", label: "Check Group One" },
-  { value: "check group two", label: "Check Group Two" },
-  { value: "check group three", label: "Check Group Three" },
-];
 
 function FormWithReusableInputs() {
   const form = useForm<FormType>({
