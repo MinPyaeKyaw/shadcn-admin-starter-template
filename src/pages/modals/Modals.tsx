@@ -19,21 +19,24 @@ export function Modals() {
   };
 
   return (
-    <div>
-      <PageTtile />
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {modals.map((m) => (
-          <ModalCard key={m.id} modal={m} open={handleOpenModal} />
-        ))}
+    <div className="space-y-4">
+      <div>
+        <PageTtile />
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {modals.map((m) => (
+            <ModalCard key={m.id} modal={m} open={handleOpenModal} />
+          ))}
+        </div>
       </div>
 
-      {/* <PageTtile />
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <ModalCard />
-        <ModalCard />
-        <ModalCard />
-        <ModalCard />
-      </div> */}
+      <div>
+        <PageTtile />
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {modals.map((m) => (
+            <ModalCard key={m.id} modal={m} open={handleOpenModal} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

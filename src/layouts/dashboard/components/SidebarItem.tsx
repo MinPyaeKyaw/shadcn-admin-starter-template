@@ -138,7 +138,7 @@ function SidebarItem({ icon, name, route, childs, collapsible = true }: Props) {
       >
         <div className={clsx("flex items-center gap-2")}>
           <div>{icon}</div>
-          <div className="min-w-[100px] overflow-hidden">
+          <div className="min-w-[150px] overflow-hidden">
             <Text>{name}</Text>
           </div>
         </div>
