@@ -33,14 +33,18 @@ function PasswordInput({
   const togglePasswordVisibility = () => {
     setVisiblePassword((prev) => !prev);
   };
+
   return (
     <FormField
       control={form.control}
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel className="flex items-center gap-1">
-            {label}{" "}
+          <FormLabel
+            htmlFor={form.id + name}
+            className="flex items-center gap-1"
+          >
+            {label}
             {withAsterisk && <span className="mt-1 text-destructive">*</span>}
           </FormLabel>
           <FormControl>
@@ -56,6 +60,7 @@ function PasswordInput({
                 )}
               </div>
               <Input
+                id={form.id + name}
                 type={visiblePassword ? "text" : "password"}
                 placeholder={placeholder}
                 {...field}
