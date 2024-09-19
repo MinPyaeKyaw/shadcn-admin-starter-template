@@ -16,9 +16,12 @@ interface Props {
 function ModalCard({ modal, open }: Props) {
   return (
     <div className="block bg-background border rounded-lg space-y-4 p-4">
-      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <Text size="xl" weight="bold">
         {modal.title}
-      </h5>
+      </Text>
+      {/* <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        {modal.title}
+      </h5> */}
       <Text className="text-muted-foreground">{modal.description}</Text>
       <Button onClick={() => open(modal.id, modal.modalProps)}>
         Open Modal

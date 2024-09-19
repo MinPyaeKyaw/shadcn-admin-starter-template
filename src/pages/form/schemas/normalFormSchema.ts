@@ -14,4 +14,5 @@ export const normalFormSchema = z.object({
   checkboxInput: requiredTrueValue("Need to be checked"),
   passwordInput: requiredString("This field is required!"),
   dateInput: requiredString("This field is required!"),
+  textareaInput: requiredString("This field is required!"),
 });

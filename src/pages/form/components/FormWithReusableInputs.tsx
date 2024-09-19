@@ -11,6 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { normalFormSchema } from "../schemas/normalFormSchema";
 import { checkgpData, radioData, selectData } from "../mock-data/mock-data";
+import TextareaInput from "@components/inputs/TextareaInput";
 
 type FormType = {
   textInput: string;
@@ -20,6 +21,7 @@ type FormType = {
   passwordInput: string;
   dateInput: string;
   checkboxInput: boolean;
+  textareaInput: string;
 };
 
 function FormWithReusableInputs() {
@@ -33,6 +35,7 @@ function FormWithReusableInputs() {
       passwordInput: "",
       dateInput: "",
       checkboxInput: false,
+      textareaInput: "",
     },
   });
 
@@ -77,6 +80,14 @@ function FormWithReusableInputs() {
               label="Enter Password"
               placeholder="Password input"
               name="passwordInput"
+              withAsterisk
+              form={form}
+            />
+
+            <TextareaInput
+              label="Enter Long Text"
+              placeholder="Textarea input"
+              name="textareaInput"
               withAsterisk
               form={form}
             />
