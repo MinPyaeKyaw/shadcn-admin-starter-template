@@ -48,7 +48,7 @@ export function Modals() {
 
       <div>
         <PageTitle
-          title="Customizable & Reusable Toast Components"
+          title="Customizable & Reusable Modal Components"
           desc="Easily create dynamic, scalable forms with customizable, reusable
         components. Simplify development with built-in validation,
         accessibility, and flexible styling options for any project."
