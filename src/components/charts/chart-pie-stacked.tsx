@@ -46,7 +46,7 @@ const chartConfig = {
   },
   january: {
     label: "January",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(var(--primary))",
   },
   february: {
     label: "February",

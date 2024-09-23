@@ -29,7 +29,7 @@ const chartData = [
 const chartConfig = {
   running: {
     label: "Running",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(var(--primary))",
     icon: Footprints,
   },
   swimming: {

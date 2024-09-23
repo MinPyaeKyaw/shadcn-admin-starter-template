@@ -55,7 +55,7 @@ export default function BarChartNegative() {
                   key={item.month}
                   fill={
                     item.visitors > 0
-                      ? "hsl(var(--chart-1))"
+                      ? "hsl(var(--primary))"
                       : "hsl(var(--chart-2))"
                   }
                 />

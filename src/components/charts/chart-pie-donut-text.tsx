@@ -33,7 +33,7 @@ const chartConfig = {
   },
   chrome: {
     label: "Chrome",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(var(--primary))",
   },
   safari: {
     label: "Safari",
