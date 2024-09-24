@@ -29,11 +29,11 @@ const chartData = [
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "hsl(var(--primary))",
+    color: "hsl(var(--chart-1))",
   },
   mobile: {
     label: "Mobile",
-    color: "hsl(var(--secondary))",
+    color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig;
 

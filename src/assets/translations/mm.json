@@ -1,3 +1,13 @@
 {
-  "title": "ကြိုဆိုပါတယ်ဗျာ"
+  "title": "ကြိုဆိုပါတယ်ဗျာ",
+  "sidebar": {
+    "dashboard": "ဒက်ရှိဘုတ်",
+    "form": "ဖောင်",
+    "table": "ဇယားကွက်",
+    "charts": "ဇယားများ",
+    "calendar": "ပြက္ခဒိန်",
+    "errPages": "အမှားစာမျက်နှာများ",
+    "modals": "Modals & Toasts",
+    "loaders": "Loaders"
+  }
 }

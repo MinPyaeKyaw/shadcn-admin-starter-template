@@ -1,3 +1,13 @@
 {
-  "title": "Welcome"
+  "title": "Welcome",
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "form": "Form",
+    "table": "Table",
+    "charts": "Charts",
+    "calendar": "Calendar",
+    "errPages": "Error Pages",
+    "modals": "Modals & Toasts",
+    "loaders": "Loaders"
+  }
 }

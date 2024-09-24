@@ -10,32 +10,32 @@ import {
 
 const menus = [
   {
-    name: "Dashboard",
+    name: "sidebar.dashboard",
     icon: <LayoutDashboard className="h-[18px] w-[18px]" />,
     route: "/",
   },
   {
-    name: "Form",
+    name: "sidebar.form",
     icon: <FileText className="h-[18px] w-[18px]" />,
     route: "/forms",
   },
   {
-    name: "Table",
+    name: "sidebar.table",
     icon: <Table2 className="h-[18px] w-[18px]" />,
     route: "/table",
   },
   {
-    name: "Charts",
+    name: "sidebar.charts",
     icon: <ChartColumnIncreasing className="h-[18px] w-[18px]" />,
     route: "/charts",
   },
   {
-    name: "Calendar",
+    name: "sidebar.calendar",
     icon: <CalendarDays className="h-[18px] w-[18px]" />,
     route: "/calendar",
   },
   {
-    name: "Error Pages",
+    name: "sidebar.errPages",
     icon: <ShieldX className="h-[18px] w-[18px]" />,
     route: "error-pages",
     childs: [

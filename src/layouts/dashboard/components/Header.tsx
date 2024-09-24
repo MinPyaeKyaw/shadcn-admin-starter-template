@@ -39,7 +39,7 @@ export function Header() {
   return (
     <header
       className={clsx(
-        "fixed top-0 right-0 flex gap-4 px-4 py-4 bg-background",
+        "fixed top-0 right-0 z-10 flex gap-4 px-4 py-4 bg-background",
         APP_TRANSITION,
         sidebarCollapsed ? "left-0 sm:left-[60px]" : "sm:left-[250px] left-0"
       )}
