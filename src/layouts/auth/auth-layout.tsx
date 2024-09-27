@@ -4,10 +4,12 @@ import { Header } from "./components";
 
 function AuthLayout() {
   return (
-    <Center className="w-full h-[100vh]">
-      <Header />
-      <Outlet />
-    </Center>
+    <div className="w-full h-[100vh] p-4">
+      <Center>
+        <Header />
+        <Outlet />
+      </Center>
+    </div>
   );
 }
 

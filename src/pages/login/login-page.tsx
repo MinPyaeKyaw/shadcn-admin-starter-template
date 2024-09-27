@@ -29,26 +29,34 @@ export function Login() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="border rounded-lg p-4 space-y-4 w-full sm:w-[300px]"
+        className="border rounded-lg p-4 space-y-4 w-full sm:w-[400px]"
       >
-        <Text>Login Here</Text>
+        <div>
+          <Text size="xxl">Login Here</Text>
+          <Text className="text-muted-foreground">
+            Username - admin | Password - password
+          </Text>
+        </div>
+
         <TextInput
-          label="Enter Something"
-          placeholder="Text input"
-          name="textInput"
+          label="Username"
+          placeholder="Enter Username"
+          name="username"
           withAsterisk
           form={form}
         />
 
         <PasswordInput
           label="Enter Password"
-          placeholder="Password input"
-          name="passwordInput"
+          placeholder="Enter Password"
+          name="password"
           withAsterisk
           form={form}
         />
 
-        <Button type="submit">Login</Button>
+        <Button type="submit" fullWidth>
+          Login
+        </Button>
       </form>
     </Form>
   );
