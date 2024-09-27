@@ -1,17 +1,17 @@
-import CheckboxInput from "@components/inputs/CheckboxInput";
-import CheckGroupInput from "@components/inputs/CheckGroupInput";
-import DateInput from "@components/inputs/DateInput";
-import PasswordInput from "@components/inputs/PasswordInput";
-import RadioInput from "@components/inputs/RadioInput";
-import SelectInput from "@components/inputs/SelectInput";
-import TextInput from "@components/inputs/TextInput";
 import { Button } from "@components/ui/button";
 import { Form } from "@components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { normalFormSchema } from "../schemas/normalFormSchema";
+import { normalFormSchema } from "../schemas/normal-form-schema";
 import { checkgpData, radioData, selectData } from "../mock-data/mock-data";
-import TextareaInput from "@components/inputs/TextareaInput";
+import CheckboxInput from "@components/inputs/checkbox-input";
+import CheckGroupInput from "@components/inputs/checkgroup-Input";
+import DateInput from "@components/inputs/date-input";
+import PasswordInput from "@components/inputs/password-input";
+import RadioInput from "@components/inputs/radio-input";
+import SelectInput from "@components/inputs/select-input";
+import TextInput from "@components/inputs/text-input";
+import TextareaInput from "@components/inputs/textarea-input";
 
 type FormType = {
   textInput: string;

@@ -2,7 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import en from "@assets/translations/en.json";
 import mm from "@assets/translations/mm.json";
-import useUserPreference from "@stores/userPreference";
+import useUserPreference from "@stores/user-preference";
 
 const resources = {
   en: {

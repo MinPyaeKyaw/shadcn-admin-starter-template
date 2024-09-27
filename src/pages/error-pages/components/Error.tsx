@@ -1,6 +1,6 @@
-import Center from "@components/commons/Center";
+import Center from "@components/commons/center";
 import Lottie from "lottie-react";
-import Text from "@components/commons/Text";
+import Text from "@components/commons/text";
 import cat from "@assets/lotties/cat.json";
 
 interface Props {

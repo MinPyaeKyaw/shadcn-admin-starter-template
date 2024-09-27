@@ -1,4 +1,4 @@
-import { DashboardLayout } from "@layouts/dashboard/DashboardLayout";
+import { DashboardLayout } from "@layouts/dashboard/dashboard-layout";
 import {
   Calendar,
   Charts,

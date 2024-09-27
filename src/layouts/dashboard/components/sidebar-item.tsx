@@ -6,14 +6,14 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@components/ui/tooltip";
-import useUserPreference from "@stores/userPreference";
+import useUserPreference from "@stores/user-preference";
 import { useNavigate, useMatch, useLocation } from "react-router-dom";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@components/ui/popover";
-import Text from "@components/commons/Text";
+import Text from "@components/commons/text";
 import { useTranslation } from "react-i18next";
 
 interface Props {

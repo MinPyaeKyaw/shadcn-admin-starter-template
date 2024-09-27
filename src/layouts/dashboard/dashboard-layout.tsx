@@ -1,9 +1,9 @@
 import { TooltipProvider } from "@components/ui/tooltip";
-import { Header, Sidebar } from "./components";
 import { Outlet } from "react-router-dom";
-import useUserPreference from "@stores/userPreference";
 import clsx from "clsx";
 import { APP_GRID, APP_TRANSITION } from "@configs/ui";
+import { Header, Sidebar } from "./components";
+import useUserPreference from "@stores/user-preference";
 
 export function DashboardLayout() {
   const { sidebarCollapsed } = useUserPreference();

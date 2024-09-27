@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@components/theme/ThemeProvider";
+import { ThemeProvider } from "@components/theme/theme-provider";
 import { Toaster } from "@components/ui/toaster";
 import { router } from "@configs/routes";
 import { RouterProvider } from "react-router-dom";

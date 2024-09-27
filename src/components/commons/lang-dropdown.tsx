@@ -5,7 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
-import useUserPreference from "@stores/userPreference";
+import useUserPreference from "@stores/user-preference";
 import clsx from "clsx";
 import { Earth } from "lucide-react";
 import { useTranslation } from "react-i18next";

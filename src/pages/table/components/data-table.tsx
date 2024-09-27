@@ -30,12 +30,25 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   showPagination?: boolean;
+  manualPagination?: boolean;
+  paginationState?: {
+    pageIndex: number;
+    pageSize: number;
+  };
+  onPaginationChange?: React.Dispatch<
+    React.SetStateAction<{ pageIndex: number; pageSize: number }>
+  >;
+  rowCount?: number;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
   showPagination = true,
+  manualPagination = false,
+  paginationState,
+  onPaginationChange,
+  rowCount,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
@@ -53,8 +66,12 @@ export function DataTable<TData, TValue>({
       columnVisibility,
       rowSelection,
       columnFilters,
+      ...paginationState,
     },
     enableRowSelection: true,
+    manualPagination: manualPagination,
+    rowCount: rowCount,
+    onPaginationChange: onPaginationChange,
     onRowSelectionChange: setRowSelection,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
@@ -66,9 +83,6 @@ export function DataTable<TData, TValue>({
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),
   });
-
-  console.log("core rows", table.getCoreRowModel());
-  console.log("rows", table.getRowModel());
 
   return (
     <div className="space-y-4">
@@ -123,7 +137,9 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-      {showPagination && <DataTablePagination table={table} />}
+      {(showPagination || manualPagination) && (
+        <DataTablePagination table={table} />
+      )}
     </div>
   );
 }

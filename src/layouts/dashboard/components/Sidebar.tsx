@@ -1,9 +1,9 @@
-import SidebarItem from "./SidebarItem";
+import SidebarItem from "./sidebar-item";
 import menus from "@configs/menus";
-import SidebarHeader from "./SidebarHeader";
-import SidebarFooter from "./SidebarFooter";
+import SidebarHeader from "./sidebar-header";
+import SidebarFooter from "./sidebar-footer";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import useUserPreference from "@stores/userPreference";
+import useUserPreference from "@stores/user-preference";
 import clsx from "clsx";
 
 export function Sidebar() {

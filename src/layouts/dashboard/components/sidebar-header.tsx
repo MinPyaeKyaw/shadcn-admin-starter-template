@@ -1,6 +1,6 @@
 import { Cannabis } from "lucide-react";
-import Text from "@components/commons/Text";
-import useUserPreference from "@stores/userPreference";
+import Text from "@components/commons/text";
+import useUserPreference from "@stores/user-preference";
 import clsx from "clsx";
 
 function SidebarHeader() {

@@ -1,4 +1,4 @@
-import PageTitle from "@components/commons/PageTitle";
+import PageTitle from "@components/commons/page-title";
 import FormWithReusableInputs from "./components/FormWithReusableInputs";
 
 export function Form() {

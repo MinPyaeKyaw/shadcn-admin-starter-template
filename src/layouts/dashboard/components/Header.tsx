@@ -15,14 +15,14 @@ import {
 import { Moon, PanelLeft, Sun } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import menus from "@configs/menus";
-import SidebarItem from "./SidebarItem";
-import Logo from "@components/commons/Logo";
-import SearchInput from "@components/inputs/SearchInput";
-import useUserPreference from "@stores/userPreference";
+import SidebarItem from "./sidebar-item";
+import useUserPreference from "@stores/user-preference";
 import clsx from "clsx";
 import { APP_TRANSITION } from "@configs/ui";
-import { useTheme } from "@components/theme/ThemeProvider";
-import LangDropdown from "@components/commons/LangDropdown";
+import LangDropdown from "@components/commons/lang-dropdown";
+import { useTheme } from "@components/theme/theme-provider";
+import SearchInput from "@components/inputs/search-input";
+import Logo from "@components/commons/logo";
 
 export function Header() {
   const { sidebarCollapsed } = useUserPreference();

@@ -1,4 +1,4 @@
-import Text from "@components/commons/Text";
+import Text from "@components/commons/text";
 import { Button } from "@components/ui/button";
 
 interface Props {

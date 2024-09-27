@@ -1,4 +1,4 @@
-import Text from "@components/commons/Text";
+import Text from "@components/commons/text";
 
 function DemoModal() {
   return (
