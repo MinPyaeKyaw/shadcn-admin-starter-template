@@ -6,4 +6,3 @@ export * from "./table/Table";
 export * from "./form/Form";
 export * from "./error-pages/404";
 export * from "./error-pages/500";
-export * from "./loaders/Loaders";
