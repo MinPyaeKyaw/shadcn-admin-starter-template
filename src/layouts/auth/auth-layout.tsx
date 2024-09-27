@@ -1,9 +1,11 @@
 import Center from "@components/commons/center";
 import { Outlet } from "react-router-dom";
+import { Header } from "./components";
 
 function AuthLayout() {
   return (
-    <Center className="bg-primary w-full h-[100vh]">
+    <Center className="w-full h-[100vh]">
+      <Header />
       <Outlet />
     </Center>
   );
