@@ -3,7 +3,7 @@ import { useToast } from "@hooks/use-toast";
 import { useModal } from "@saimin/react-modal-manager";
 import ModalCard from "./components/ModalCard";
 import ToastCard from "./components/ToastCard";
-import DemoModal from "@components/modals/DemoModal";
+import DemoModal from "@components/modals/demo";
 import PageTitle from "@components/commons/page-title";
 import toasts from "./mock-data/toasts";
 import modals from "./mock-data/modals";

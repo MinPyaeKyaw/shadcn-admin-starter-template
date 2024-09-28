@@ -32,6 +32,7 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "i18next": "^23.15.1",
+    "js-cookie": "^3.0.5",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.438.0",
     "react": "^18.3.1",
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^22.5.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

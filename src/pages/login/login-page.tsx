@@ -6,6 +6,7 @@ import { loginSchema } from "./schemas/login-schema";
 import TextInput from "@components/inputs/text-input";
 import PasswordInput from "@components/inputs/password-input";
 import { Button } from "@components/ui/button";
+import useAuthOperations from "@hooks/use-auth-operations";
 
 type FormType = {
   username: string;
@@ -13,6 +14,7 @@ type FormType = {
 };
 
 export function Login() {
+  const { login } = useAuthOperations();
   const form = useForm<FormType>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -22,7 +24,7 @@ export function Login() {
   });
 
   function onSubmit(values: FormType) {
-    console.log(values);
+    login(values);
   }
 
   return (

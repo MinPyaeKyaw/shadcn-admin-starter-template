@@ -18,15 +18,24 @@ import menus from "@configs/menus";
 import SidebarItem from "./sidebar-item";
 import useUserPreference from "@stores/user-preference";
 import clsx from "clsx";
-import { APP_TRANSITION } from "@configs/ui";
 import LangDropdown from "@components/commons/lang-dropdown";
 import { useTheme } from "@components/theme/theme-provider";
 import SearchInput from "@components/inputs/search-input";
 import Logo from "@components/commons/logo";
+import { useModal } from "@saimin/react-modal-manager";
+import LogoutConfirmation from "@components/modals/logout-confirmation";
 
 export function Header() {
   const { sidebarCollapsed } = useUserPreference();
   const { setTheme, theme } = useTheme();
+  const { open } = useModal();
+
+  const handleOpenModal = () => {
+    open("logout-confirmation", {
+      content: <LogoutConfirmation />,
+      animationType: "zoom",
+    });
+  };
 
   const handleToggleTheme = () => {
     if (theme === "dark") {
@@ -39,8 +48,7 @@ export function Header() {
   return (
     <header
       className={clsx(
-        "fixed top-0 right-0 z-10 flex gap-4 px-4 py-4 bg-background",
-        APP_TRANSITION,
+        "fixed top-0 right-0 z-10 flex gap-4 px-4 py-4 bg-background transition-all duration-300",
         sidebarCollapsed ? "left-0 sm:left-[60px]" : "sm:left-[250px] left-0"
       )}
     >
@@ -106,7 +114,9 @@ export function Header() {
           <DropdownMenuContent align="end">
             <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>Logout</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleOpenModal}>
+              Logout
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

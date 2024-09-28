@@ -1,7 +1,6 @@
 import { Button } from "@components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import clsx from "clsx";
-import { APP_TRANSITION } from "@configs/ui";
 import LangDropdown from "@components/commons/lang-dropdown";
 import { useTheme } from "@components/theme/theme-provider";
 import Logo from "@components/commons/logo";
@@ -20,8 +19,7 @@ export function Header() {
   return (
     <header
       className={clsx(
-        "w-full fixed top-0 right-0 z-10 flex gap-4 px-4 py-4 bg-background",
-        APP_TRANSITION
+        "w-full fixed top-0 right-0 z-10 flex gap-4 px-4 py-4 bg-background transition-all duration-300"
       )}
     >
       {/* ======== App Bar ======== */}
