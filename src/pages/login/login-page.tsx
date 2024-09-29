@@ -9,6 +9,7 @@ import PasswordInput from "@components/inputs/password-input";
 import { Button } from "@components/ui/button";
 import useAuthOperations from "@hooks/use-auth-operations";
 import { ADMIN } from "@configs/vars";
+import { useTranslation } from "react-i18next";
 
 type FormType = {
   username: string;
@@ -17,6 +18,7 @@ type FormType = {
 
 export function Login() {
   const { login } = useAuthOperations();
+  const { t } = useTranslation();
   const form = useForm<FormType>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -43,30 +45,32 @@ export function Login() {
         className="border rounded-lg p-4 space-y-4 w-full sm:w-[400px]"
       >
         <div>
-          <Text size="xxl">Login Here</Text>
+          <Text size="xxl">{t("login.loginHere")}</Text>
           <Text className="text-muted-foreground">
-            Username - admin | Password - password
+            {`${t("login.username")} - admin | ${t(
+              "login.password"
+            )} - password`}
           </Text>
         </div>
 
         <TextInput
-          label="Username"
-          placeholder="Enter Username"
+          label={t("login.username")}
+          placeholder={t("login.enterUsername")}
           name="username"
           withAsterisk
           form={form}
         />
 
         <PasswordInput
-          label="Enter Password"
-          placeholder="Enter Password"
+          label={t("login.password")}
+          placeholder={t("login.enterPassword")}
           name="password"
           withAsterisk
           form={form}
         />
 
         <Button type="submit" fullWidth>
-          Login
+          {t("login.login")}
         </Button>
       </form>
     </Form>

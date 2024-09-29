@@ -9,5 +9,13 @@
     "errPages": "အမှားစာမျက်နှာများ",
     "modals": "Modals & Toasts",
     "loaders": "Loaders"
+  },
+  "login": {
+    "loginHere": "လော့ဂင်ဝင်ရန်",
+    "username": "နာမည်",
+    "enterUsername": "နာမည်ရိုက်ထည့်ပါ",
+    "password": "စကားဝှက်",
+    "enterPassword": "စကားဝှက်ရိုက်ထည့်ပါ",
+    "login": "ဝင်မည်"
   }
 }

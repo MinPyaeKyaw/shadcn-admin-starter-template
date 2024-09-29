@@ -9,5 +9,13 @@
     "errPages": "Error Pages",
     "modals": "Modals & Toasts",
     "loaders": "Loaders"
+  },
+  "login": {
+    "loginHere": "Login Here",
+    "username": "Username",
+    "enterUsername": "Enter Username",
+    "password": "Password",
+    "enterPassword": "Enter Password",
+    "login": "Login"
   }
 }

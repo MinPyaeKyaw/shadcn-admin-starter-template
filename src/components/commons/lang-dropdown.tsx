@@ -30,7 +30,7 @@ function LangDropdown() {
           <Earth className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" className="space-y-1">
         <DropdownMenuItem
           onClick={() => handleChangeLang("en")}
           className={clsx(
