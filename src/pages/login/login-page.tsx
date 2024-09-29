@@ -1,4 +1,5 @@
 import { Form } from "@components/ui/form";
+import { toast } from "sonner";
 import Text from "@components/commons/text";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -7,6 +8,7 @@ import TextInput from "@components/inputs/text-input";
 import PasswordInput from "@components/inputs/password-input";
 import { Button } from "@components/ui/button";
 import useAuthOperations from "@hooks/use-auth-operations";
+import { ADMIN } from "@configs/vars";
 
 type FormType = {
   username: string;
@@ -24,7 +26,14 @@ export function Login() {
   });
 
   function onSubmit(values: FormType) {
-    login(values);
+    if (
+      ADMIN.username === values.username &&
+      ADMIN.password === values.password
+    ) {
+      login(values);
+    } else {
+      toast.error("Wrong username or password");
+    }
   }
 
   return (
