@@ -29,10 +29,10 @@ export function DataTableToolbar<TData>({
           className="h-8 w-[150px] lg:w-[250px]"
         />
         <div className="flex gap-x-2">
-          {table.getColumn("status") && (
+          {table.getColumn("brand") && (
             <DataTableFacetedFilter
-              column={table.getColumn("status")}
-              title="Status"
+              column={table.getColumn("brand")}
+              title="Brand"
               options={statuses}
             />
           )}
