@@ -1,6 +1,6 @@
 import { Checkbox } from "@components/ui/checkbox";
-import { DataTableColumnHeader } from "./data-table-column-header";
-import { DataTableRowActions } from "./data-table-row-actions";
+import { DataTableColumnHeader } from "@components/data-table/data-table-column-header";
+import { DataTableRowActions } from "@components/data-table/data-table-row-actions";
 
 export const columns: any = [
   {

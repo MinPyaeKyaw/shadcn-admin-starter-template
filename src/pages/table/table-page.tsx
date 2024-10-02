@@ -1,4 +1,4 @@
-import { DataTable } from "./components/data-table";
+import { DataTable } from "@components/data-table/data-table";
 import { columns } from "./components/columns";
 import PageTitle from "@components/commons/page-title";
 import { useState } from "react";
