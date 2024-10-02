@@ -3,8 +3,6 @@ import {
   Table as ShadcnTable,
   TableBody,
   TableCell,
-  // TableBody,
-  // TableCell,
   TableHead,
   TableHeader,
   TableRow,

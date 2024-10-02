@@ -1,13 +1,11 @@
-import { ColumnDef } from "@tanstack/react-table";
 import { Checkbox } from "@components/ui/checkbox";
 import { DataTableColumnHeader } from "./data-table-column-header";
 import { DataTableRowActions } from "./data-table-row-actions";
-import { Task } from "../mock-data/schema";
 
-export const columns: ColumnDef<Task>[] = [
+export const columns: any = [
   {
     id: "select",
-    header: ({ table }) => (
+    header: ({ table }: any) => (
       <Checkbox
         checked={
           table.getIsAllPageRowsSelected() ||
@@ -18,7 +16,7 @@ export const columns: ColumnDef<Task>[] = [
         className="translate-y-[2px]"
       />
     ),
-    cell: ({ row }) => (
+    cell: ({ row }: any) => (
       <Checkbox
         checked={row.getIsSelected()}
         onCheckedChange={(value) => row.toggleSelected(!!value)}
@@ -31,57 +29,55 @@ export const columns: ColumnDef<Task>[] = [
   },
   {
     accessorKey: "id",
-    header: ({ column }) => (
+    header: ({ column }: any) => (
       <DataTableColumnHeader column={column} title="ID" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
+    cell: ({ row }: any) => <div>{row.getValue("id")}</div>,
     enableSorting: false,
     enableHiding: false,
   },
   {
     accessorKey: "title",
-    header: ({ column }) => (
+    header: ({ column }: any) => (
       <DataTableColumnHeader column={column} title="Product" />
     ),
-    cell: ({ row }) => {
+    cell: ({ row }: any) => {
       return (
         <div className="flex space-x-2">
-          <span className="max-w-32 truncate font-medium sm:max-w-72 md:max-w-[31rem]">
-            {row.getValue("title")}
-          </span>
+          <span className="truncate font-medium">{row.getValue("title")}</span>
         </div>
       );
     },
   },
   {
     accessorKey: "brand",
-    header: ({ column }) => (
+    header: ({ column }: any) => (
       <DataTableColumnHeader column={column} title="Brand" />
     ),
-    cell: ({ row }) => {
+    cell: ({ row }: any) => {
       return (
-        <div className="flex w-[100px] items-center">
+        <div className="flex items-center">
           <span>{row.getValue("brand")}</span>
         </div>
       );
     },
-    filterFn: (row, id, value) => {
+    filterFn: (row: any, id: any, value: any) => {
       return value.includes(row.getValue(id));
     },
   },
   {
     accessorKey: "availabilityStatus",
-    header: ({ column }) => (
+    header: ({ column }: any) => (
       <DataTableColumnHeader column={column} title="Status" />
     ),
-    cell: ({ row }) => {
+    cell: ({ row }: any) => {
       return (
         <div className="flex items-center">
           <span>{row.getValue("availabilityStatus")}</span>
         </div>
       );
     },
-    filterFn: (row, id, value) => {
+    filterFn: (row: any, id: any, value: any) => {
       return value.includes(row.getValue(id));
     },
   },

@@ -3,15 +3,16 @@ import { columns } from "./components/columns";
 import PageTitle from "@components/commons/page-title";
 import { useState } from "react";
 import { useGetAllProducts } from "@apis/queries/product";
+import { PaginationState } from "@tanstack/react-table";
 
 export function Table() {
-  const [paginationState, setPaginationState] = useState({
+  const [paginationState, setPaginationState] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 10,
   });
 
   const { data, isLoading } = useGetAllProducts({
-    skip: paginationState.pageIndex,
+    skip: paginationState.pageIndex * paginationState.pageSize,
     limit: paginationState.pageSize,
   });
 
@@ -27,11 +28,11 @@ export function Table() {
       <DataTable
         data={data?.data.products}
         columns={columns}
+        loading={isLoading}
+        rowCount={data?.data.total}
         manualPagination={true}
         paginationState={paginationState}
         onPaginationChange={setPaginationState}
-        rowCount={data?.data.total}
-        loading={isLoading}
       />
     </div>
   );
