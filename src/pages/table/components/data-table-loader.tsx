@@ -16,8 +16,8 @@ interface Props<TData> {
   rowCount: number;
 }
 
-function DataTableLoader<TData>({ table }: Props<TData>) {
-  const rowCount = new Array(6).fill("");
+function DataTableLoader<TData>({ table, rowCount }: Props<TData>) {
+  const rowCountNumber = new Array(rowCount).fill("");
 
   return (
     <div className="rounded-md border">
@@ -41,7 +41,7 @@ function DataTableLoader<TData>({ table }: Props<TData>) {
           ))}
         </TableHeader>
         <TableBody>
-          {rowCount.map((_, i) => (
+          {rowCountNumber.map((_, i) => (
             <TableRow key={i}>
               {table.getAllColumns().map((_, i) => (
                 <TableCell key={i} className="h-12">

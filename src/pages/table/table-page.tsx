@@ -1,6 +1,5 @@
 import { DataTable } from "./components/data-table";
 import { columns } from "./components/columns";
-// import { tasks } from "./mock-data/tasks";
 import PageTitle from "@components/commons/page-title";
 import { useState } from "react";
 import { useGetAllProducts } from "@apis/queries/product";
@@ -8,12 +7,13 @@ import { useGetAllProducts } from "@apis/queries/product";
 export function Table() {
   const [paginationState, setPaginationState] = useState({
     pageIndex: 0,
-    pageSize: 5,
+    pageSize: 10,
   });
 
-  const { data, isLoading } = useGetAllProducts();
-
-  console.log(isLoading, data);
+  const { data, isLoading } = useGetAllProducts({
+    skip: paginationState.pageIndex,
+    limit: paginationState.pageSize,
+  });
 
   return (
     <div className="w-full">
@@ -27,10 +27,10 @@ export function Table() {
       <DataTable
         data={data?.data.products}
         columns={columns}
-        showPagination={true}
+        manualPagination={true}
         paginationState={paginationState}
         onPaginationChange={setPaginationState}
-        rowCount={5}
+        rowCount={data?.data.total}
         loading={isLoading}
       />
     </div>

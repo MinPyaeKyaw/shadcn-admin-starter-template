@@ -23,6 +23,7 @@ import {
   TableRow,
 } from "@components/ui/table";
 import DataTableLoader from "./data-table-loader";
+import { DataTablePagination } from "./data-table-pagination";
 
 // import { DataTablePagination } from "../components/data-table-pagination";
 // import { DataTableToolbar } from "../components/data-table-toolbar";
@@ -30,7 +31,6 @@ import DataTableLoader from "./data-table-loader";
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  showPagination?: boolean;
   manualPagination?: boolean;
   paginationState?: {
     pageIndex: number;
@@ -46,7 +46,6 @@ interface DataTableProps<TData, TValue> {
 export function DataTable<TData, TValue>({
   columns,
   data,
-  // showPagination = true,
   manualPagination = false,
   paginationState,
   onPaginationChange,
@@ -92,7 +91,10 @@ export function DataTable<TData, TValue>({
       {/* <DataTableToolbar table={table} /> */}
 
       {loading ? (
-        <DataTableLoader table={table} rowCount={0} />
+        <DataTableLoader
+          table={table}
+          rowCount={paginationState?.pageSize as number}
+        />
       ) : (
         <div className="rounded-md border">
           <Table>
@@ -145,9 +147,7 @@ export function DataTable<TData, TValue>({
           </Table>
         </div>
       )}
-      {/* {(showPagination || manualPagination) && (
-        <DataTablePagination table={table} />
-      )} */}
+      {manualPagination && <DataTablePagination table={table} />}
     </div>
   );
 }
