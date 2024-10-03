@@ -4,6 +4,7 @@ import PageTitle from "@components/commons/page-title";
 import { useState } from "react";
 import { useGetAllProducts } from "@apis/queries/product";
 import { PaginationState } from "@tanstack/react-table";
+import Toolbar from "./components/tool-bar";
 
 export function Table() {
   const [paginationState, setPaginationState] = useState<PaginationState>({
@@ -24,6 +25,8 @@ export function Table() {
         components. Simplify development with built-in validation,
         accessibility, and flexible styling options for any project."
       />
+
+      <Toolbar />
 
       <DataTable
         data={data?.data.products}

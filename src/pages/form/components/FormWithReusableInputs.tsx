@@ -52,7 +52,7 @@ function FormWithReusableInputs() {
         >
           <div className="space-y-4">
             <TextInput
-              label="Enter Something"
+              label="Text Input"
               placeholder="Text input"
               name="textInput"
               withAsterisk
@@ -60,7 +60,7 @@ function FormWithReusableInputs() {
             />
 
             <SelectInput
-              label="Choose One"
+              label="Select Input"
               placeholder="Select input"
               name="selectInput"
               data={selectData}
@@ -69,7 +69,7 @@ function FormWithReusableInputs() {
             />
 
             <DateInput
-              label="Choose Date"
+              label="Date Input"
               placeholder="Date input"
               name="dateInput"
               withAsterisk
@@ -77,7 +77,7 @@ function FormWithReusableInputs() {
             />
 
             <PasswordInput
-              label="Enter Password"
+              label="Password Input"
               placeholder="Password input"
               name="passwordInput"
               withAsterisk
@@ -85,7 +85,7 @@ function FormWithReusableInputs() {
             />
 
             <TextareaInput
-              label="Enter Long Text"
+              label="Textarea Input"
               placeholder="Textarea input"
               name="textareaInput"
               withAsterisk
@@ -95,7 +95,7 @@ function FormWithReusableInputs() {
 
           <div className="space-y-4">
             <TextInput
-              label="Enter Something"
+              label="Text Input With Description"
               placeholder="Text input"
               description="This is text input with description"
               name="textInputWithDesc"
@@ -103,7 +103,7 @@ function FormWithReusableInputs() {
             />
 
             <RadioInput
-              label="Choose One"
+              label="Radio Input"
               name="radioInput"
               data={radioData}
               withAsterisk
@@ -111,7 +111,7 @@ function FormWithReusableInputs() {
             />
 
             <CheckGroupInput
-              label="Choose Some"
+              label="Check Group Input"
               name="checkgroupInput"
               data={checkgpData}
               withAsterisk
@@ -119,7 +119,7 @@ function FormWithReusableInputs() {
             />
 
             <CheckboxInput
-              label="Terms & conditions"
+              label="Single Check Input"
               name="checkboxInput"
               description="This is checkbox with description"
               form={form}
