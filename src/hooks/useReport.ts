@@ -1,14 +1,12 @@
 import * as XLSX from "xlsx";
 
 const useReport = () => {
-  const generateExcel = () => {
-    // Data you want to export
-    const data = [
-      { name: "John Doe", age: 28, city: "New York" },
-      { name: "Jane Doe", age: 22, city: "Los Angeles" },
-      { name: "Michael Smith", age: 35, city: "Chicago" },
-    ];
-
+  /**
+   *
+   * @param data data that you want to export in object array format
+   * @param filename filename of your exported file
+   */
+  const generateExcel = (data: Record<string, unknown>[], filename: string) => {
     // Convert JSON to a worksheet
     const worksheet = XLSX.utils.json_to_sheet(data);
 
@@ -17,7 +15,7 @@ const useReport = () => {
     XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
 
     // Generate the Excel file and trigger a download
-    XLSX.writeFile(workbook, "sample_data.xlsx");
+    XLSX.writeFile(workbook, `${filename}.xlsx`);
   };
 
   return { generateExcel };

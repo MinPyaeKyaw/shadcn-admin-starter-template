@@ -21,8 +21,9 @@ interface Props {
   data: DataType[];
   withAsterisk?: boolean;
   name: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
+  isLoading?: boolean;
+  className?: string;
 }
 
 function SelectInput({
@@ -33,6 +34,8 @@ function SelectInput({
   data,
   name,
   form,
+  isLoading = false,
+  className,
 }: Props) {
   return (
     <FormField
@@ -44,14 +47,22 @@ function SelectInput({
             {label}{" "}
             {withAsterisk && <span className="mt-1 text-destructive">*</span>}
           </FormLabel>
-          <Select onValueChange={field.onChange} defaultValue={field.value}>
+          <Select
+            disabled={isLoading}
+            onValueChange={field.onChange}
+            defaultValue={field.value}
+          >
             <FormControl>
-              <SelectTrigger>
-                <SelectValue placeholder={placeholder} />
+              <SelectTrigger className={className}>
+                {isLoading ? (
+                  "loading..."
+                ) : (
+                  <SelectValue placeholder={placeholder} />
+                )}
               </SelectTrigger>
             </FormControl>
             <SelectContent>
-              {data.map((d) => (
+              {data?.map((d) => (
                 <SelectItem key={d.value as string} value={d.value as string}>
                   {d.label}
                 </SelectItem>
@@ -63,16 +74,6 @@ function SelectInput({
         </FormItem>
       )}
     />
-    // <Select>
-    //   <SelectTrigger className="w-full">
-    //     <SelectValue placeholder="Theme" />
-    //   </SelectTrigger>
-    //   <SelectContent>
-    //     <SelectItem value="light">Light</SelectItem>
-    //     <SelectItem value="dark">Dark</SelectItem>
-    //     <SelectItem value="system">System</SelectItem>
-    //   </SelectContent>
-    // </Select>
   );
 }
 

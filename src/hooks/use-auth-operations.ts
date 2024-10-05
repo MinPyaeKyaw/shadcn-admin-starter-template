@@ -3,7 +3,7 @@ import Cookie from "js-cookie";
 import { REFRESH_TOKEN, TOKEN } from "@configs/vars";
 
 /**
- * useAuthOperations hook to control protected and public routes.
+ * useAuthOperations hook that provides authentication & authorization methods
  */
 const useAuthOperations = () => {
   function login(value: Record<string, string>) {

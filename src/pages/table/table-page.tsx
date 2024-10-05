@@ -5,8 +5,19 @@ import { useState } from "react";
 import { useGetAllProducts } from "@apis/queries/product";
 import { PaginationState } from "@tanstack/react-table";
 import Toolbar from "./components/tool-bar";
+import { useForm } from "react-hook-form";
+
+type FormType = {
+  category: string;
+};
 
 export function Table() {
+  const toolbarForm = useForm<FormType>({
+    defaultValues: {
+      category: "",
+    },
+  });
+
   const [paginationState, setPaginationState] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 10,
@@ -15,6 +26,7 @@ export function Table() {
   const { data, isLoading } = useGetAllProducts({
     skip: paginationState.pageIndex * paginationState.pageSize,
     limit: paginationState.pageSize,
+    ...toolbarForm.watch(),
   });
 
   return (
@@ -26,7 +38,7 @@ export function Table() {
         accessibility, and flexible styling options for any project."
       />
 
-      <Toolbar />
+      <Toolbar form={toolbarForm} />
 
       <DataTable
         data={data?.data.products}
