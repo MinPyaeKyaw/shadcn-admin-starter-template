@@ -9,12 +9,14 @@ import { useForm } from "react-hook-form";
 
 type FormType = {
   category: string;
+  search: string;
 };
 
 export function Table() {
   const toolbarForm = useForm<FormType>({
     defaultValues: {
       category: "",
+      search: "",
     },
   });
 

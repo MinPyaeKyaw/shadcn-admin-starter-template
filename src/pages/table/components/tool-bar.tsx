@@ -1,4 +1,5 @@
 import Between from "@components/commons/between";
+import TextInput from "@components/inputs/text-input";
 import CategorySelect from "@components/selects/category-select";
 import { Button } from "@components/ui/button";
 import { Form } from "@components/ui/form";
@@ -27,6 +28,8 @@ function Toolbar({ form }: Props) {
     <Between className="mb-4">
       <Form {...form}>
         <form className="flex gap-4">
+          <TextInput placeholder="Search Products" name="search" form={form} />
+
           <CategorySelect
             placeholder="Choose Category"
             name="category"
