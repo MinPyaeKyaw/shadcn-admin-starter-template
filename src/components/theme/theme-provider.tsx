@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { ModalProvider } from "@saimin/react-modal-manager";
+import { TooltipProvider } from "@components/ui/tooltip";
 
 type Theme = "dark" | "light" | "system";
 
@@ -59,7 +60,9 @@ export function ThemeProvider({
 
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
-      <ModalProvider>{children}</ModalProvider>
+      <TooltipProvider>
+        <ModalProvider>{children}</ModalProvider>
+      </TooltipProvider>
     </ThemeProviderContext.Provider>
   );
 }

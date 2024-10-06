@@ -25,7 +25,6 @@ export const columns: any = [
       />
     ),
     enableSorting: false,
-    enableHiding: false,
   },
   {
     accessorKey: "id",
@@ -34,7 +33,6 @@ export const columns: any = [
     ),
     cell: ({ row }: any) => <div>{row.getValue("id")}</div>,
     enableSorting: false,
-    enableHiding: false,
   },
   {
     accessorKey: "title",
@@ -42,11 +40,7 @@ export const columns: any = [
       <DataTableColumnHeader column={column} title="Product" />
     ),
     cell: ({ row }: any) => {
-      return (
-        <div className="flex space-x-2">
-          <span className="truncate font-medium">{row.getValue("title")}</span>
-        </div>
-      );
+      return <div>{row.getValue("title")}</div>;
     },
   },
   {
@@ -55,11 +49,7 @@ export const columns: any = [
       <DataTableColumnHeader column={column} title="Brand" />
     ),
     cell: ({ row }: any) => {
-      return (
-        <div className="flex items-center">
-          <span>{row.getValue("brand")}</span>
-        </div>
-      );
+      return <div>{row.getValue("brand")}</div>;
     },
     filterFn: (row: any, id: any, value: any) => {
       return value.includes(row.getValue(id));
@@ -71,11 +61,7 @@ export const columns: any = [
       <DataTableColumnHeader column={column} title="Status" />
     ),
     cell: ({ row }: any) => {
-      return (
-        <div className="flex items-center">
-          <span>{row.getValue("availabilityStatus")}</span>
-        </div>
-      );
+      return <div>{row.getValue("availabilityStatus")}</div>;
     },
     filterFn: (row: any, id: any, value: any) => {
       return value.includes(row.getValue(id));

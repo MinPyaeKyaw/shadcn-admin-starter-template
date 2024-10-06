@@ -84,7 +84,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="space-y-4">
+    <>
       {loading ? (
         <DataTableLoader
           table={table}
@@ -98,7 +98,7 @@ export function DataTable<TData, TValue>({
                 <TableRow key={headerGroup.id}>
                   {headerGroup.headers.map((header) => {
                     return (
-                      <TableHead key={header.id} colSpan={header.colSpan}>
+                      <TableHead key={header.id}>
                         {header.isPlaceholder
                           ? null
                           : flexRender(
@@ -131,7 +131,7 @@ export function DataTable<TData, TValue>({
               ) : (
                 <TableRow>
                   <TableCell
-                    colSpan={columns?.length}
+                    colSpan={columns.length}
                     className="h-24 text-center"
                   >
                     No results.
@@ -143,6 +143,6 @@ export function DataTable<TData, TValue>({
         </div>
       )}
       {manualPagination && <DataTablePagination table={table} />}
-    </div>
+    </>
   );
 }
