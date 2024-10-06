@@ -1,5 +1,4 @@
 import {
-  CalendarDays,
   ChartColumnIncreasing,
   FileBox,
   FileText,
@@ -28,11 +27,6 @@ const menus = [
     name: "sidebar.charts",
     icon: <ChartColumnIncreasing className="h-[18px] w-[18px]" />,
     route: "/charts",
-  },
-  {
-    name: "sidebar.calendar",
-    icon: <CalendarDays className="h-[18px] w-[18px]" />,
-    route: "/calendar",
   },
   {
     name: "sidebar.errPages",

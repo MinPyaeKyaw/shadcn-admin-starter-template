@@ -2,7 +2,6 @@ import AuthLayout from "@layouts/auth/auth-layout";
 import { DashboardLayout } from "@layouts/dashboard/dashboard-layout";
 import RootLayout from "@layouts/root/root-layout";
 import {
-  Calendar,
   Charts,
   Dashboard,
   Error404,
@@ -39,10 +38,6 @@ export const router = createBrowserRouter([
           {
             path: "charts",
             element: <Charts />,
-          },
-          {
-            path: "calendar",
-            element: <Calendar />,
           },
           {
             path: "modals",
