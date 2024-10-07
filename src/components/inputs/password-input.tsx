@@ -16,7 +16,6 @@ interface Props {
   description?: string;
   withAsterisk?: boolean;
   name: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
 }
 
@@ -40,13 +39,15 @@ function PasswordInput({
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel
-            htmlFor={form.id + name}
-            className="flex items-center gap-1"
-          >
-            {label}
-            {withAsterisk && <span className="mt-1 text-destructive">*</span>}
-          </FormLabel>
+          {(label || withAsterisk) && (
+            <FormLabel
+              htmlFor={form.id + name}
+              className="flex items-center gap-1"
+            >
+              {label}
+              {withAsterisk && <span className="mt-1 text-destructive">*</span>}
+            </FormLabel>
+          )}
           <FormControl>
             <div className="relative flex items-center justify-between">
               <div

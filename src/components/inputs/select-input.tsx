@@ -43,10 +43,12 @@ function SelectInput({
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel className="flex items-center gap-1">
-            {label}{" "}
-            {withAsterisk && <span className="mt-1 text-destructive">*</span>}
-          </FormLabel>
+          {(label || withAsterisk) && (
+            <FormLabel className="flex items-center gap-1">
+              {label}{" "}
+              {withAsterisk && <span className="mt-1 text-destructive">*</span>}
+            </FormLabel>
+          )}
           <Select
             disabled={isLoading}
             onValueChange={field.onChange}

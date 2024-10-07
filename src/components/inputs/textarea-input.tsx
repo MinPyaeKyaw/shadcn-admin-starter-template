@@ -14,7 +14,6 @@ interface Props {
   description?: string;
   withAsterisk?: boolean;
   name: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
 }
 
@@ -33,10 +32,14 @@ function TextareaInput({
       render={({ field }) => {
         return (
           <FormItem>
-            <FormLabel className="flex items-center gap-1">
-              {label}{" "}
-              {withAsterisk && <span className="mt-1 text-destructive">*</span>}
-            </FormLabel>
+            {(label || withAsterisk) && (
+              <FormLabel className="flex items-center gap-1">
+                {label}{" "}
+                {withAsterisk && (
+                  <span className="mt-1 text-destructive">*</span>
+                )}
+              </FormLabel>
+            )}
             <FormControl>
               <Textarea
                 placeholder={placeholder}

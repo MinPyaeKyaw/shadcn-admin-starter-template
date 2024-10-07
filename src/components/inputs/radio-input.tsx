@@ -12,7 +12,6 @@ interface Props {
   name: string;
   withAsterisk?: boolean;
   data: DataType[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
 }
 
@@ -23,10 +22,12 @@ function RadioInput({ label, name, data, withAsterisk = false, form }: Props) {
       name={name}
       render={({ field }) => (
         <FormItem className="space-y-3">
-          <FormLabel className="flex items-center gap-1">
-            {label}{" "}
-            {withAsterisk && <span className="mt-1 text-destructive">*</span>}
-          </FormLabel>
+          {(label || withAsterisk) && (
+            <FormLabel className="flex items-center gap-1">
+              {label}{" "}
+              {withAsterisk && <span className="mt-1 text-destructive">*</span>}
+            </FormLabel>
+          )}
           <FormControl>
             <RadioGroup
               onValueChange={field.onChange}

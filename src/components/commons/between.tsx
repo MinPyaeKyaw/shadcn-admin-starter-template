@@ -10,12 +10,7 @@ interface Props {
 
 function Between({ w = "full", h = "auto", className, children }: Props) {
   return (
-    <div
-      className={clsx(
-        `w-${w} h-${h} flex justify-between items-center`,
-        className
-      )}
-    >
+    <div className={clsx(`w-${w} h-${h} flex justify-between`, className)}>
       {children}
     </div>
   );

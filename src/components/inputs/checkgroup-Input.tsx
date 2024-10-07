@@ -14,7 +14,6 @@ interface Props {
   withAsterisk?: boolean;
   data: DataType[];
   name: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   form?: any;
 }
 
