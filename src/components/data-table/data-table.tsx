@@ -84,7 +84,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <>
+    <div className="space-y-4">
       {loading ? (
         <DataTableLoader
           table={table}
@@ -143,6 +143,6 @@ export function DataTable<TData, TValue>({
         </div>
       )}
       {manualPagination && <DataTablePagination table={table} />}
-    </>
+    </div>
   );
 }

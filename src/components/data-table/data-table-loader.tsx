@@ -43,7 +43,7 @@ function DataTableLoader<TData>({ table, rowCount }: Props<TData>) {
             <TableRow key={i}>
               {table.getAllColumns().map((_, i) => (
                 <TableCell key={i} className="h-12">
-                  <Skeleton className="h-4 w-[100px]" />
+                  <Skeleton className="h-4" />
                 </TableCell>
               ))}
             </TableRow>

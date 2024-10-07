@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { Dispatch, ReactNode, SetStateAction, useState } from "react";
 import clsx from "clsx";
 import { ChevronDown } from "lucide-react";
 import {
@@ -21,6 +21,7 @@ interface Props {
   name: string;
   route: string;
   collapsible?: boolean;
+  closeSheet?: Dispatch<SetStateAction<boolean>>;
   childs?: {
     icon?: ReactNode;
     name: string;
@@ -28,7 +29,14 @@ interface Props {
   }[];
 }
 
-function SidebarItem({ icon, name, route, childs, collapsible = true }: Props) {
+function SidebarItem({
+  icon,
+  name,
+  route,
+  childs,
+  collapsible = true,
+  closeSheet,
+}: Props) {
   const { sidebarCollapsed } = useUserPreference();
   const navigate = useNavigate();
   const location = useLocation();
@@ -60,6 +68,7 @@ function SidebarItem({ icon, name, route, childs, collapsible = true }: Props) {
       setShowChilds((prev) => !prev);
     } else {
       navigate(route);
+      if (closeSheet) closeSheet((prev) => !prev);
     }
   };
 

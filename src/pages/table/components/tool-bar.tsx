@@ -6,12 +6,10 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
 import { Form } from "@components/ui/form";
-// import useReport from "@hooks/useReport";
+import useReport from "@hooks/use-report";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 
 interface Props {
@@ -19,19 +17,19 @@ interface Props {
 }
 
 function Toolbar({ form }: Props) {
-  // const { generateExcel } = useReport();
+  const { generateExcel } = useReport();
 
-  // const handleGenerateReport = () => {
-  //   generateExcel(
-  //     [
-  //       { hehe: "hello" },
-  //       { hehe: "hello1" },
-  //       { hehe: "hello2" },
-  //       { hehe: "hello3" },
-  //     ],
-  //     "product-list-report"
-  //   );
-  // };
+  const handleGenerateReport = () => {
+    generateExcel(
+      [
+        { hehe: "hello" },
+        { hehe: "hello1" },
+        { hehe: "hello2" },
+        { hehe: "hello3" },
+      ],
+      "product-list-report"
+    );
+  };
 
   return (
     <Between className="mb-4 items-center">
@@ -52,26 +50,19 @@ function Toolbar({ form }: Props) {
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"
-            className="flex h-8 w-8 p-0 data-[state=open]:bg-muted"
+            className="flex h-9 w-9 p-0 data-[state=open]:bg-muted"
           >
             <DotsHorizontalIcon className="h-4 w-4" />
             <span className="sr-only">Open menu</span>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[160px]">
-          <DropdownMenuItem>Edit</DropdownMenuItem>
-          <DropdownMenuItem>Make a copy</DropdownMenuItem>
-          <DropdownMenuItem>Favorite</DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            Delete
-            <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
+          <DropdownMenuItem>Add new</DropdownMenuItem>
+          <DropdownMenuItem onClick={handleGenerateReport}>
+            Download report
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-
-      {/* <Button onClick={handleGenerateReport}>Download Report</Button> */}
     </Between>
   );
 }

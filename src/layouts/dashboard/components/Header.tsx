@@ -24,11 +24,18 @@ import SearchInput from "@components/inputs/search-input";
 import Logo from "@components/commons/logo";
 import { useModal } from "@saimin/react-modal-manager";
 import LogoutConfirmation from "@components/modals/logout-confirmation";
+import { useState } from "react";
 
 export function Header() {
   const { sidebarCollapsed } = useUserPreference();
   const { setTheme, theme } = useTheme();
   const { open } = useModal();
+
+  const [sheetOpen, setSheetOpen] = useState(false);
+
+  const toggleSheet = () => {
+    setSheetOpen((prev) => !prev);
+  };
 
   const handleOpenModal = () => {
     open("logout-confirmation", {
@@ -53,7 +60,7 @@ export function Header() {
       )}
     >
       {/* ======== Mobile Drawer Navbar ======== */}
-      <Sheet>
+      <Sheet open={sheetOpen} onOpenChange={toggleSheet}>
         <SheetTrigger asChild>
           <Button size="icon" variant="outline" className="sm:hidden">
             <PanelLeft className="h-5 w-5" />
@@ -76,6 +83,7 @@ export function Header() {
                 name={m.name}
                 route={m.route}
                 childs={m.childs}
+                closeSheet={setSheetOpen}
               />
             ))}
           </nav>
