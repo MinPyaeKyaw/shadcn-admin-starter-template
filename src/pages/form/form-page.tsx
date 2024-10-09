@@ -1,15 +1,13 @@
 import PageTitle from "@components/commons/page-title";
 import FormWithReusableInputs from "./components/FormWithReusableInputs";
+import { useTranslation } from "react-i18next";
 
 export function Form() {
+  const { t } = useTranslation();
+
   return (
     <div className="grid gap-4 grid-cols-1">
-      <PageTitle
-        title="Customizable & Reusable Form Components"
-        desc="Easily create dynamic, scalable forms with customizable, reusable
-        components. Simplify development with built-in validation,
-        accessibility, and flexible styling options for any project."
-      />
+      <PageTitle title={t("form.pageTitle")} desc={t("form.pageDesc")} />
 
       <FormWithReusableInputs />
     </div>

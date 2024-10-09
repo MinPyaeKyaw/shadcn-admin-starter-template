@@ -7,8 +7,7 @@
     "charts": "Charts",
     "calendar": "Calendar",
     "errPages": "Error Pages",
-    "modals": "Modals & Toasts",
-    "loaders": "Loaders"
+    "modals": "Modals"
   },
   "login": {
     "loginHere": "Login Here",
@@ -17,5 +16,17 @@
     "password": "Password",
     "enterPassword": "Enter Password",
     "login": "Login"
+  },
+  "form": {
+    "pageTitle": "Customizable & Reusable Form Components",
+    "pageDesc": "Easily create dynamic, scalable forms with customizable, reusable components. Simplify development with built-in validation, accessibility, and flexible styling options for any project."
+  },
+  "table": {
+    "pageTitle": "Customizable & Reusable Table Components",
+    "pageDesc": "Easily create dynamic, scalable forms with customizable, reusable components. Simplify development with built-in validation, accessibility, and flexible styling options for any project."
+  },
+  "modal": {
+    "pageTitle": "Customizable & Reusable Modal Components",
+    "pageDesc": "Easily create dynamic, scalable forms with customizable, reusable components. Simplify development with built-in validation, accessibility, and flexible styling options for any project."
   }
 }

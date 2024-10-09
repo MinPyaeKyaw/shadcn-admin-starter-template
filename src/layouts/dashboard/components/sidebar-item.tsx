@@ -105,6 +105,7 @@ function SidebarItem({
                     name={c.name}
                     route={c.route}
                     collapsed={sidebarCollapsed}
+                    closeSheet={closeSheet}
                   />
                   // <div key={c.route}>{c.name}</div>÷
                 ))}
@@ -177,6 +178,7 @@ function SidebarItem({
             icon={c.icon}
             name={c.name}
             route={c.route}
+            closeSheet={closeSheet}
           />
         ))}
       </div>
@@ -189,12 +191,14 @@ function ChildItem({
   name,
   route,
   collapsed = false,
+  closeSheet,
 }: Omit<Props, "childs"> & { collapsed?: boolean }) {
   const isMatched = useMatch(route);
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate(route);
+    if (closeSheet) closeSheet((prev) => !prev);
   };
 
   return (

@@ -11,7 +11,7 @@ function PageTitle({ title, desc }: Props) {
       <Text size="xxl" weight="bold">
         {title}
       </Text>
-      <Text className="text-muted-foreground">{desc}</Text>
+      <Text className="text-muted-foreground mt-2">{desc}</Text>
     </div>
   );
 }

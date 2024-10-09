@@ -46,7 +46,7 @@ const menus = [
     ],
   },
   {
-    name: "Modals & Toasts",
+    name: "sidebar.modals",
     icon: <FileBox className="h-[18px] w-[18px]" />,
     route: "/modals",
   },

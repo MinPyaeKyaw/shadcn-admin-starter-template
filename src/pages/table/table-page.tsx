@@ -6,6 +6,7 @@ import { useGetAllProducts } from "@apis/queries/product";
 import { PaginationState } from "@tanstack/react-table";
 import Toolbar from "./components/tool-bar";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type FormType = {
   category: string;
@@ -13,6 +14,8 @@ type FormType = {
 };
 
 export function Table() {
+  const { t } = useTranslation();
+
   const toolbarForm = useForm<FormType>({
     defaultValues: {
       category: "",
@@ -33,12 +36,7 @@ export function Table() {
 
   return (
     <div className="w-full">
-      <PageTitle
-        title="Customizable & Reusable Table Components"
-        desc="Easily create dynamic, scalable forms with customizable, reusable
-        components. Simplify development with built-in validation,
-        accessibility, and flexible styling options for any project."
-      />
+      <PageTitle title={t("table.pageTitle")} desc={t("table.pageDesc")} />
 
       <Toolbar form={toolbarForm} />
 
