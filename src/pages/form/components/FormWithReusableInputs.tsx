@@ -12,6 +12,7 @@ import RadioInput from "@components/inputs/radio-input";
 import SelectInput from "@components/inputs/select-input";
 import TextInput from "@components/inputs/text-input";
 import TextareaInput from "@components/inputs/textarea-input";
+import { toast } from "sonner";
 
 type FormType = {
   textInput: string;
@@ -41,6 +42,7 @@ function FormWithReusableInputs() {
 
   function onSubmit(values: FormType) {
     console.log(values);
+    toast.success("Successfully submitted!");
   }
 
   return (

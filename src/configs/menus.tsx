@@ -1,8 +1,8 @@
 import {
   ChartColumnIncreasing,
+  CircleGauge,
   FileBox,
   FileText,
-  LayoutDashboard,
   ShieldX,
   Table2,
 } from "lucide-react";
@@ -10,7 +10,7 @@ import {
 const menus = [
   {
     name: "sidebar.dashboard",
-    icon: <LayoutDashboard className="h-[18px] w-[18px]" />,
+    icon: <CircleGauge className="h-[18px] w-[18px]" />,
     route: "/",
   },
   {
