@@ -2,7 +2,7 @@ import AreaChartAxes from "@components/charts/chart-area-axes";
 import AreaChartDefault from "@components/charts/chart-area-default";
 import AreaChartGradient from "@components/charts/chart-area-gradient";
 import AreaChartIcon from "@components/charts/chart-area-icons";
-import AreaChartInteractive from "@components/charts/chart-area-interactive";
+// import AreaChartInteractive from "@components/charts/chart-area-interactive";
 import AreaChartLegend from "@components/charts/chart-area-legend";
 import AreaChartLinear from "@components/charts/chart-area-linear";
 import AreaChartStacked from "@components/charts/chart-area-stacked";
@@ -73,7 +73,6 @@ export function Charts() {
       <AreaChartDefault />
       <AreaChartGradient />
       <AreaChartIcon />
-      <AreaChartInteractive />
       <AreaChartLegend />
       <AreaChartLinear />
       <AreaChartStackedExpand />
