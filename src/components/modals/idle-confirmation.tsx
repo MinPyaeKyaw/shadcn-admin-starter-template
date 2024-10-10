@@ -10,7 +10,7 @@ function IdleConfirmation() {
   return (
     <div className="w-[400px] rounded-lg overflow-hidden bg-background p-4">
       <Text size="lg">
-        <b>You have been idle</b>
+        <b>You have been idled</b>
       </Text>
 
       <br />

@@ -15,11 +15,13 @@ export function DashboardLayout() {
 
   const handleOnIdle = () => {
     setIsIdle(true);
-    open("idle", {
-      content: <IdleConfirmation />,
-      animationType: "zoom",
-      hideOnClickBackDrop: false,
-    });
+
+    if (!isIdle)
+      open("idle", {
+        content: <IdleConfirmation />,
+        animationType: "zoom",
+        hideOnClickBackDrop: false,
+      });
   };
 
   const handleOnActive = () => {
