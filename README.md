@@ -36,22 +36,27 @@ This starter template is designed for building a modern React.js dashboard appli
 - The template includes localization support for translating the app into multiple languages.
 - **react-i18next** or similar libraries are used for internationalization, allowing easy switching between different languages based on user preferences.
 
-### 8. Dark Mode and Light Mode
+### 8. Idle State Detection
+
+- The template incorporates idle state detection, monitoring user activity and determining periods of inactivity.
+- Using event listeners for mouse movements, keyboard inputs, and touch events, it efficiently tracks user presence, enabling actions like session timeouts or notifications after extended idle periods.
+
+### 9. Dark Mode and Light Mode
 
 - Users can toggle between light and dark themes.
 - **CSS variables** or **Styled Components** are used to manage theming, ensuring that the UI adapts dynamically without requiring page reloads.
 
-### 9. UI for Error Pages
+### 10. UI for Error Pages
 
 - The app includes custom-designed **error pages** (e.g., 404 Not Found, 500 Internal Server Error).
 - These error pages guide users back to the main app and provide useful context, improving the user experience even in failure scenarios.
 
-### 10. Responsive Design
+### 11. Responsive Design
 
 - The template is fully responsive, ensuring an optimal user experience across devices, from desktops to mobile phones.
 - **CSS Grid** and **Flexbox** are employed to ensure the layout adjusts seamlessly for different screen sizes.
 
-### 11. Sidebar and Header for Dashboard Layout
+### 12. Sidebar and Header for Dashboard Layout
 
 - A sidebar navigation component is integrated to allow quick access to various sections of the dashboard.
 - The **header** includes essential user interactions like profile access, notifications, theme toggles, and logout options.
