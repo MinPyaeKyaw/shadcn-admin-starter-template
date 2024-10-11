@@ -16,47 +16,52 @@ This starter template is designed for building a modern React.js dashboard appli
 - A highly customizable and performant data table is integrated using **TanStack Table**.
 - Features include pagination, sorting, filtering, and flexible layouts to accommodate various types of data.
 
-### 3. Form Integration and Validation using React Hook Form and Zod
+### 3. Download Report in Excel
+
+- The template includes a download report feature, allowing users to export data in Excel format for easy sharing and analysis.
+- This feature is seamlessly integrated with the UI, enabling one-click downloads and ensuring data is formatted correctly for Excel compatibility, making reporting and data analysis more convenient.
+
+### 4. Form Integration and Validation using React Hook Form and Zod
 
 - Form handling is managed by **React Hook Form**, which offers seamless validation, error handling, and state management for form inputs.
 - **Zod** is used for form validation schemas, ensuring the form data adheres to strict types and structures.
 - Together, they provide a robust solution for managing form state and ensuring the correctness of user input.
 
-### 4. Modal and Toast Notifications
+### 5. Modal and Toast Notifications
 
 - **Modal** windows are used for displaying overlays, confirmations, or additional information without leaving the current page.
 - **Toast notifications** provide feedback to users for actions like form submission success or API errors, ensuring a better user experience.
 
-### 5. Charts
+### 6. Charts
 
 - The template supports visual data representation using charts. **Chart.js** or a similar charting library is used to display data in various formats (bar charts, line charts, etc.), making the dashboard informative and engaging.
 
-### 6. Localization (i18n)
+### 7. Localization (i18n)
 
 - The template includes localization support for translating the app into multiple languages.
 - **react-i18next** or similar libraries are used for internationalization, allowing easy switching between different languages based on user preferences.
 
-### 7. Idle State Detection
+### 8. Idle State Detection
 
 - The template incorporates idle state detection, monitoring user activity and determining periods of inactivity.
 - Using event listeners for mouse movements, keyboard inputs, and touch events, it efficiently tracks user presence, enabling actions like session timeouts or notifications after extended idle periods.
 
-### 8. Dark Mode and Light Mode
+### 9. Dark Mode and Light Mode
 
 - Users can toggle between light and dark themes.
 - **CSS variables** or **Styled Components** are used to manage theming, ensuring that the UI adapts dynamically without requiring page reloads.
 
-### 9. UI for Error Pages
+### 10. UI for Error Pages
 
 - The app includes custom-designed **error pages** (e.g., 404 Not Found, 500 Internal Server Error).
 - These error pages guide users back to the main app and provide useful context, improving the user experience even in failure scenarios.
 
-### 10. Responsive Design
+### 11. Responsive Design
 
 - The template is fully responsive, ensuring an optimal user experience across devices, from desktops to mobile phones.
 - **CSS Grid** and **Flexbox** are employed to ensure the layout adjusts seamlessly for different screen sizes.
 
-### 11. Sidebar and Header for Dashboard Layout
+### 12. Sidebar and Header for Dashboard Layout
 
 - A sidebar navigation component is integrated to allow quick access to various sections of the dashboard.
 - The **header** includes essential user interactions like profile access, notifications, theme toggles, and logout options.
