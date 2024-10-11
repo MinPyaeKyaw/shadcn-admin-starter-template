@@ -9,7 +9,7 @@ import { useState } from "react";
 
 export function DashboardLayout() {
   const { sidebarCollapsed } = useUserPreference();
-  const { open, close } = useModal();
+  const { open, closeAll } = useModal();
 
   const [isIdle, setIsIdle] = useState<boolean>(false);
 
@@ -26,14 +26,16 @@ export function DashboardLayout() {
 
   const handleOnActive = () => {
     setIsIdle(false);
-    if (!isIdle) close("idle");
+    if (!isIdle) closeAll();
   };
 
   return (
     <IdleTimerProvider
       timeout={import.meta.env.VITE_IDLE_TIME}
       onIdle={handleOnIdle}
-      onActive={handleOnActive}
+      onActive={() => {
+        if (!isIdle) handleOnActive();
+      }}
     >
       <div className="flex min-h-screen w-full flex-col bg-background">
         <Sidebar />

@@ -35,7 +35,7 @@ export function Table() {
   });
 
   return (
-    <div className="w-full">
+    <div className="w-full space-y-4">
       <PageTitle title={t("table.pageTitle")} desc={t("table.pageDesc")} />
 
       <Toolbar form={toolbarForm} />

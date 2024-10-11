@@ -4,7 +4,7 @@ import useAuthOperations from "@hooks/use-auth-operations";
 import { useModal } from "@saimin/react-modal-manager";
 
 function IdleConfirmation() {
-  const { close } = useModal();
+  const { closeAll } = useModal();
   const { logout } = useAuthOperations();
 
   return (
@@ -20,7 +20,7 @@ function IdleConfirmation() {
           Log out
         </Button>
 
-        <Button onClick={() => close("idle")}>Continue</Button>
+        <Button onClick={closeAll}>Continue</Button>
       </div>
     </div>
   );
