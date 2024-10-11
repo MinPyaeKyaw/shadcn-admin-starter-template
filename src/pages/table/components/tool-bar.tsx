@@ -19,6 +19,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
+import { useGetAllProducts } from "@apis/queries/product";
 
 interface Props {
   form: any;
@@ -28,20 +29,16 @@ function Toolbar({ form }: Props) {
   const { generateExcel } = useReport();
   const [openFilters, setOpenFilters] = useState<boolean>(false);
 
+  // 2nd parameter false for fetching automatically on mounting component
+  const { refetch } = useGetAllProducts({}, false);
+
   const toggleFilter = () => {
     setOpenFilters((prev) => !prev);
   };
 
-  const handleGenerateReport = () => {
-    generateExcel(
-      [
-        { hehe: "hello" },
-        { hehe: "hello1" },
-        { hehe: "hello2" },
-        { hehe: "hello3" },
-      ],
-      "product-list-report"
-    );
+  const handleDownloadReport = async () => {
+    const { data } = await refetch();
+    generateExcel(data?.data?.products, "product-list-report");
   };
 
   return (
@@ -76,7 +73,7 @@ function Toolbar({ form }: Props) {
               <Plus className="h-4 w-4 mr-1" />
               Add New
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={handleDownloadReport}>
               <ArrowDownFromLine className="h-4 w-4 mr-1" />
               Download Report
             </DropdownMenuItem>
@@ -138,7 +135,7 @@ function Toolbar({ form }: Props) {
             Add New
           </Button>
 
-          <Button onClick={handleGenerateReport}>
+          <Button onClick={handleDownloadReport}>
             <ArrowDownFromLine className="h-4 w-4 mr-1" />
             Download Report
           </Button>
