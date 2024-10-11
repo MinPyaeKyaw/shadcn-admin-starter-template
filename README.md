@@ -1,16 +1,10 @@
-# React.js Starter Template Documentation
+# React.js Admin Portal Starter Template Documentation
 
 ## Overview
 
 This starter template is designed for building a modern React.js dashboard application. It includes essential features like authentication, data fetching, table display, charting, localization, and more. It’s fully responsive and supports both light and dark themes. Below are detailed descriptions of the features and their integrations.
 
 ## Features
-
-### 1. Login / Logout
-
-- A login and logout system is implemented using an authentication API.
-- Users are authenticated through API requests, with JWT tokens stored in local storage for session management.
-- On successful login, the user is redirected to the dashboard, and logout clears the session and returns to the login screen.
 
 ### 2. API Integration using Axios and TanStack Query
 
@@ -22,10 +16,11 @@ This starter template is designed for building a modern React.js dashboard appli
 - A highly customizable and performant data table is integrated using **TanStack Table**.
 - Features include pagination, sorting, filtering, and flexible layouts to accommodate various types of data.
 
-### 4. Form Integration using React Hook Form
+### 4. Form Integration and Validation using React Hook Form and Zod
 
 - Form handling is managed by **React Hook Form**, which offers seamless validation, error handling, and state management for form inputs.
-- It's designed to handle complex form structures and integrates well with custom input components, making it easy to manage form state.
+- **Zod** is used for form validation schemas, ensuring the form data adheres to strict types and structures.
+- Together, they provide a robust solution for managing form state and ensuring the correctness of user input.
 
 ### 5. Modal and Toast Notifications
 
@@ -65,23 +60,29 @@ This starter template is designed for building a modern React.js dashboard appli
 ## Technology Stack
 
 - **React.js**: Front-end framework
+- **Schadcnui**: React UI Library
+- **Zustand**: Global state container
 - **Axios**: API requests and HTTP client
 - **TanStack Query (React Query)**: Data fetching and caching
 - **TanStack Table**: Data table for handling large datasets
 - **React Hook Form**: Form state management and validation
+- **Zod**: Form validation schema for strict type checking
 - **Chart.js**: Charting library for visual data representation
 - **react-i18next**: Localization and multi-language support
-- **Styled Components / CSS Modules**: Theming and styling
 - **Toast**: Notifications and user feedback
 - **Modal**: UI overlays for additional user actions
 
 ## Project Structure
 
+- **src/apis/**: Axios instances, interceptors, services and tanstack queries.
+- **src/assets/**: Lottie files, translation files and images.
 - **src/components/**: Reusable components such as form inputs, buttons, modals, etc.
-- **src/pages/**: Pages like Login, Dashboard, and Error pages.
+- **src/configs/**: Routes, app menu and vars.
+- **src/helpers/**: Helper functions.
 - **src/hooks/**: Custom hooks for handling API requests, form submissions, and more.
-- **src/utils/**: Utility functions for common tasks like date formatting, token management, etc.
-- **src/locales/**: Localization files for supporting multiple languages.
+- **src/layouts/**: App layouts such as root, auth and dashboard layouts.
+- **src/pages/**: Pages like Login, Dashboard, and Error pages.
+- **src/stores/**: State containers.
 
 ---
 
