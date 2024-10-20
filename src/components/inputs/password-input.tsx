@@ -54,7 +54,7 @@ function PasswordInput({
                 onClick={togglePasswordVisibility}
                 className="cursor-pointer flex items-center justify-center h-full px-4 border-l absolute right-0"
               >
-                {visiblePassword ? (
+                {!visiblePassword ? (
                   <EyeOff className="h-4 w-4" />
                 ) : (
                   <Eye className="h-4 w-4" />
