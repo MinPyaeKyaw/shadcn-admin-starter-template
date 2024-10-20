@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
 
-export function DataTableRowActions() {
+export function RowActions() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

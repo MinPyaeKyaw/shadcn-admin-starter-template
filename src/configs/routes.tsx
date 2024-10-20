@@ -11,7 +11,7 @@ import {
   Modals,
   Table,
 } from "@pages/index";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +24,11 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            path: "",
+            element: <Navigate to="dashboard" replace />,
+          },
+          {
+            index: true,
+            path: "dashboard",
             element: <Dashboard />,
           },
           {

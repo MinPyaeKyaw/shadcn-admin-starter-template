@@ -4,18 +4,18 @@ import Cookie from "js-cookie";
 import { TOKEN } from "@configs/vars";
 
 /**
- * useAuth hook to protect private routes
+ * useUnauth hook to protect auth routes after login
  */
-const useAuth = () => {
+const useUnauth = () => {
   const navigate = useNavigate();
   const isLoggined = Cookie.get(TOKEN);
 
   useEffect(() => {
-    if (!isLoggined) {
-      navigate("/auth/login");
+    if (isLoggined) {
+      navigate("/");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggined]);
 };
 
-export default useAuth;
+export default useUnauth;

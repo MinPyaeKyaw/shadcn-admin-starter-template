@@ -1,18 +1,21 @@
 import Text from "@components/commons/text";
 import { Button } from "@components/ui/button";
-import useAuthOperations from "@hooks/use-auth-operations";
 import { useModal } from "@saimin/react-modal-manager";
 
-function LogoutConfirmation() {
+interface Props {
+  onConfirm: () => void;
+}
+
+function LogoutConfirmation({ onConfirm }: Props) {
   const { close } = useModal();
-  const { logout } = useAuthOperations();
 
   const handleCancel = () => {
     close("logout-confirmation");
   };
 
   const handleLogout = () => {
-    logout();
+    onConfirm();
+    close("logout-confirmation");
   };
 
   return (

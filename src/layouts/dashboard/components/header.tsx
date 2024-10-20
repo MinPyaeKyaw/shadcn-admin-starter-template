@@ -25,11 +25,13 @@ import Logo from "@components/commons/logo";
 import { useModal } from "@saimin/react-modal-manager";
 import LogoutConfirmation from "@components/modals/logout-confirmation";
 import { useState } from "react";
+import useAuthOperations from "@hooks/use-auth-operations";
 
 export function Header() {
   const { sidebarCollapsed } = useUserPreference();
   const { setTheme, theme } = useTheme();
   const { open } = useModal();
+  const { logout } = useAuthOperations();
 
   const [sheetOpen, setSheetOpen] = useState(false);
 
@@ -39,7 +41,7 @@ export function Header() {
 
   const handleOpenModal = () => {
     open("logout-confirmation", {
-      content: <LogoutConfirmation />,
+      content: <LogoutConfirmation onConfirm={logout} />,
       animationType: "zoom",
     });
   };

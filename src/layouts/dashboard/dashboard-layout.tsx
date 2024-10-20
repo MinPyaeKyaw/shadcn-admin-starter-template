@@ -6,10 +6,15 @@ import { IdleTimerProvider } from "react-idle-timer";
 import { useModal } from "@saimin/react-modal-manager";
 import IdleConfirmation from "@components/modals/idle-confirmation";
 import { useState } from "react";
+import useAuthOperations from "@hooks/use-auth-operations";
+import useAuth from "@hooks/use-auth";
 
 export function DashboardLayout() {
+  useAuth();
+
   const { sidebarCollapsed } = useUserPreference();
   const { open, closeAll } = useModal();
+  const { logout } = useAuthOperations();
 
   const [isIdle, setIsIdle] = useState<boolean>(false);
 
@@ -18,7 +23,7 @@ export function DashboardLayout() {
 
     if (!isIdle)
       open("idle", {
-        content: <IdleConfirmation />,
+        content: <IdleConfirmation onLogout={logout} />,
         animationType: "zoom",
         hideOnClickBackDrop: false,
       });

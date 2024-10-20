@@ -1,11 +1,18 @@
 import Text from "@components/commons/text";
 import { Button } from "@components/ui/button";
-import useAuthOperations from "@hooks/use-auth-operations";
 import { useModal } from "@saimin/react-modal-manager";
 
-function IdleConfirmation() {
+interface Props {
+  onLogout: () => void;
+}
+
+function IdleConfirmation({ onLogout }: Props) {
   const { closeAll } = useModal();
-  const { logout } = useAuthOperations();
+
+  const handleLogout = () => {
+    onLogout();
+    closeAll();
+  };
 
   return (
     <div className="w-[400px] rounded-lg overflow-hidden bg-background p-4">
@@ -16,7 +23,7 @@ function IdleConfirmation() {
       <br />
 
       <div className="flex gap-4 justify-end">
-        <Button onClick={logout} variant="secondary">
+        <Button onClick={handleLogout} variant="secondary">
           Log out
         </Button>
 
