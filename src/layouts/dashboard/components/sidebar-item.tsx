@@ -40,7 +40,6 @@ function SidebarItem({
   const { sidebarCollapsed } = useUserPreference();
   const navigate = useNavigate();
   const location = useLocation();
-  const isMatched = useMatch(route);
   const { t } = useTranslation();
 
   const [showChilds, setShowChilds] = useState<boolean>(false);
@@ -51,6 +50,11 @@ function SidebarItem({
     }
 
     return [];
+  };
+
+  const isActiveModule = (): boolean => {
+    const currentModule: string = "/" + location.pathname.split("/")[1];
+    return currentModule === route;
   };
 
   const hasActiveChild = (): boolean => {
@@ -85,7 +89,7 @@ function SidebarItem({
                   <div
                     className={clsx(
                       "cursor-pointer my-1 ml-[5px] flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-primary md:h-8 md:w-8",
-                      isMatched || hasActiveChild()
+                      isActiveModule() || hasActiveChild()
                         ? "text-primary"
                         : "text-muted-foreground"
                     )}
@@ -120,7 +124,7 @@ function SidebarItem({
                 onClick={handleClick}
                 className={clsx(
                   "cursor-pointer my-1 ml-[5px] flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-primary md:h-8 md:w-8",
-                  isMatched || hasActiveChild()
+                  isActiveModule() || hasActiveChild()
                     ? "text-primary"
                     : "text-muted-foreground"
                 )}
@@ -143,9 +147,9 @@ function SidebarItem({
         onClick={handleClick}
         className={clsx(
           "w-full h-9 flex items-center justify-between px-2 rounded-lg cursor-pointer transition-all duration-300 text-muted-foreground",
-          (isMatched || hasActiveChild()) &&
+          (isActiveModule() || hasActiveChild()) &&
             "bg-primary text-primary-foreground",
-          !(isMatched || hasActiveChild()) && "hover:bg-primary/10"
+          !(isActiveModule() || hasActiveChild()) && "hover:bg-primary/10"
         )}
       >
         <div className={clsx("flex items-center gap-2")}>

@@ -13,7 +13,7 @@ type FormType = {
   search: string;
 };
 
-export function Table() {
+export function TableList() {
   const { t } = useTranslation();
 
   const toolbarForm = useForm<FormType>({

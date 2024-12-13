@@ -20,12 +20,14 @@ import {
   DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu";
 import { useGetAllProducts } from "@apis/queries/product";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   form: any;
 }
 
 function Toolbar({ form }: Props) {
+  const navigate = useNavigate();
   const { generateExcel } = useReport();
   const [openFilters, setOpenFilters] = useState<boolean>(false);
 
@@ -130,7 +132,7 @@ function Toolbar({ form }: Props) {
         </Form>
 
         <div className="flex gap-4">
-          <Button>
+          <Button onClick={() => navigate("/table/create")}>
             <Plus className="h-4 w-4 mr-1" />
             Add New
           </Button>

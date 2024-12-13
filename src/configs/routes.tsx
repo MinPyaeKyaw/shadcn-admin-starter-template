@@ -9,7 +9,8 @@ import {
   Form,
   Login,
   Modals,
-  Table,
+  TableCreatePage,
+  TableList,
 } from "@pages/index";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
@@ -37,7 +38,11 @@ export const router = createBrowserRouter([
           },
           {
             path: "table",
-            element: <Table />,
+            element: <TableList />,
+          },
+          {
+            path: "table/create",
+            element: <TableCreatePage />,
           },
           {
             path: "charts",
